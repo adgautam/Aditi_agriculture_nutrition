@@ -1,0 +1,52 @@
+---
+title: "Agriculture Dataset Exploratory Analysis"
+description: |
+  Exploratory analysis of the crop production data source. 
+author:
+  - name: Aditi Gautam
+    url: https://github.com/adgautam
+date: "`r Sys.Date()`"
+output: 
+    radix::radix_article:
+      toc: true
+      toc_depth: 3
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = TRUE,
+	message = FALSE,
+	warning = FALSE,
+	rows.print=5
+)
+
+options(tibble.max_extra_cols = 5, tibble.print_max = 5)
+
+library(fs) # cross-platform file system operations
+```
+
+#Importing dataset
+
+```{r}
+library(fs)
+
+agri <- read_csv(path("apy.csv"))
+```
+
+#Exploring and summarizing the dataset
+
+```{r layout="l-body-outset"}
+agri
+```
+
+```{r}
+glimpse(agri)
+```
+
+```{r}
+library(skimr)
+
+skim(agri)
+```
+
+
