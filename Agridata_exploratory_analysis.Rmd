@@ -49,4 +49,43 @@ library(skimr)
 skim(agri)
 ```
 
+```{r}
+unique_crop <- unique(agri[c("Crop")])
+staple_crops <- agri[ which(agri$Crop=='Rice' | agri$Crop=='Sugarcane'
+| agri$Crop=='Lentil' | agri$Crop=='Potato' | agri$Crop=='Onion' 
+| agri$Crop=='Wheat' ), ]
+```
+
+
+#Reshaping the dataset to wide (by each district)
+
+```{r}
+staple_crops_wide <- staple_crops %>% 
+  pivot_wider(
+    names_from = Crop,  
+    values_from = c(Season, Crop_Year, Production, Area)
+  )
+
+staple_crops_wide
+```
+```{r}
+ggplot(data = staple_crops_wide) +
+  aes(x = , y = ) +
+  geom_col() +
+  coord_flip() +
+  scale_y_continuous(labels = scales::comma) +
+  theme_minimal() +
+  theme(
+    panel.grid.major.y = element_blank(),
+    axis.text.y = element_text(margin = margin(r = -15)),
+    plot.caption = element_text(face = "italic", color = "darkgrey", margin = margin(t = 10))
+  ) +
+  labs(
+    title = '10 "Worst" Landlords in Brooklyn',
+    subtitle = "Total HPD Violations in All Buildings for 2017",
+    x = NULL,
+    y = "Number of Violations",
+    caption = "Source: NYC Public Advocate's Landlord Watchlist"
+  )
+```
 
