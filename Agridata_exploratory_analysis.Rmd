@@ -28,9 +28,8 @@ library(fs) # cross-platform file system operations
 #Importing dataset
 
 ```{r}
-library(fs)
-
 agri <- read_csv(path("apy.csv"))
+#library(DataExplorer)
 ```
 
 #Exploring and summarizing the dataset
@@ -49,43 +48,49 @@ library(skimr)
 skim(agri)
 ```
 
+#Production tonnes per hectare
+
 ```{r}
-unique_crop <- unique(agri[c("Crop")])
-staple_crops <- agri[ which(agri$Crop=='Rice' | agri$Crop=='Sugarcane'
-| agri$Crop=='Lentil' | agri$Crop=='Potato' | agri$Crop=='Onion' 
-| agri$Crop=='Wheat' ), ]
+agri$Production_by_Area <- agri$Production/agri$Area
+```
+
+#Subsetting MSP crops
+
+```{r}
+msp_crops <- agri[ which(agri$Crop=='Paddy'| agri$Crop=='Wheat' | agri$Crop=='Maize'| agri$Crop=='Barley'| agri$Crop=='Ragi'| agri$Crop=='Gram'|	agri$Crop=='Arhar/Tur'| agri$Crop=='Moong(Green Gram)'| agri$Crop=='Urad'| agri$Crop=='Masoor'| agri$Crop=='Groundnut'| agri$Crop=='Rapeseed &Mustard'| agri$Crop=='Soyabean'| agri$Crop=='Sesamum'| agri$Crop=='Sunflower'| agri$Crop=='Niger seed'| agri$Crop=='Cotton'| agri$Crop=='Jute & mesta'| agri$Crop=='Jowar'| agri$Crop=='Bajra'| agri$Crop=='Sugarcane'), ]
+```
+
+#Subsetting Non-MSP crops
+
+```{r}
+non_msp_crops <- agri[ which(agri$Crop!='Sugarcane'& agri$Crop!='Wheat'& agri$Crop!='Paddy'&  agri$Crop!='Maize'& agri$Crop!='Barley'& agri$Crop!='Ragi'& agri$Crop!='Gram'&	agri$Crop!='Arhar/Tur'& agri$Crop!='Moong(Green Gram)'& agri$Crop!='Urad'& agri$Crop!='Groundnut'& agri$Crop!='Rapeseed &Mustard'& agri$Crop!='Soyabean'& agri$Crop!='Sesamum'& agri$Crop!='Sunflower'& agri$Crop!='Niger seed'& agri$Crop!='Cotton'& agri$Crop!='Jute & mesta'& agri$Crop!='Total foodgrain'& agri$Crop!='Pulses total'& agri$Crop!='Oilseeds total'& agri$Crop!='Jowar'& agri$Crop!='Bajra'& agri$Crop!='Masoor'), ]
+non_msp_crops$Average_Production_by_Area = mean(non_msp_crops$Production_by_Area, na.rm=TRUE)
+```
+
+#Graphing average production tonnes per hectare
+
+```{r}
+#library(ggplot2)
+ggplot() +
+    geom_point(data = msp_crops, aes(x = Crop_Year, y = Production_by_Area), color = "blue") +
+    geom_point(data = non_msp_crops, aes(x = Crop_Year, y = Production_by_Area), color = "red")
+```
+
+#Looking at averages by crop
+
+```{r}
+msp_crops_production <- group_by(msp_crops,Crop)
+msp_crops_production <- summarise(msp_crops_production, Average_Production_by_Area = mean(Production_by_Area, na.rm=TRUE))
+msp_crops_production <- ungroup(msp_crops_production)
+msp_crops_production
+#We find that sugarcane and jute are outliers in mean production_by_area.
+```
+```{r}
+non_msp_crops_production <- group_by(non_msp_crops,Crop)
+non_msp_crops_production <- summarise(non_msp_crops_production, Average_Production_by_Area = mean(Production_by_Area, na.rm=TRUE))
+non_msp_crops_production <- ungroup(non_msp_crops_production)
+non_msp_crops_production
 ```
 
 
-#Reshaping the dataset to wide (by each district)
-
-```{r}
-staple_crops_wide <- staple_crops %>% 
-  pivot_wider(
-    names_from = Crop,  
-    values_from = c(Season, Crop_Year, Production, Area)
-  )
-
-staple_crops_wide
-```
-```{r}
-ggplot(data = staple_crops_wide) +
-  aes(x = , y = ) +
-  geom_col() +
-  coord_flip() +
-  scale_y_continuous(labels = scales::comma) +
-  theme_minimal() +
-  theme(
-    panel.grid.major.y = element_blank(),
-    axis.text.y = element_text(margin = margin(r = -15)),
-    plot.caption = element_text(face = "italic", color = "darkgrey", margin = margin(t = 10))
-  ) +
-  labs(
-    title = '10 "Worst" Landlords in Brooklyn',
-    subtitle = "Total HPD Violations in All Buildings for 2017",
-    x = NULL,
-    y = "Number of Violations",
-    caption = "Source: NYC Public Advocate's Landlord Watchlist"
-  )
-```
 
