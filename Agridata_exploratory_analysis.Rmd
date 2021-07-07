@@ -23,13 +23,14 @@ knitr::opts_chunk$set(
 options(tibble.max_extra_cols = 5, tibble.print_max = 5)
 
 library(fs) # cross-platform file system operations
+library(tidyverse)
+library(skimr)
 ```
 
 #Importing dataset
 
 ```{r}
 agri <- read_csv(path("apy.csv"))
-#library(DataExplorer)
 ```
 
 #Exploring and summarizing the dataset
@@ -39,57 +40,136 @@ agri
 ```
 
 ```{r}
+#library(dplyr)
 glimpse(agri)
 ```
 
 ```{r}
-library(skimr)
-
+#library(skimr)
 skim(agri)
 ```
 
-#Production tonnes per hectare
+#Creating column for calculating Production tonnes per hectare and to identify MSP crops 
 
 ```{r}
-agri$Production_by_Area <- agri$Production/agri$Area
+agri <- agri %>% mutate(
+  Production_by_Area = Production / Area,
+  msp = Crop %in% c("Paddy", "Wheat", "Maize", "Barley", "Ragi", "Gram", "Arhar/Tur", "Moong(Green Gram)", "Urad", "Masoor", "Groundnut", "Rapeseed &Mustard", "Soyabean", "Sesamum", "Sunflower", "Niger seed", "Cotton", "Jute & mesta", "Jowar", "Bajra", "Sugarcane")) 
+
+agri
 ```
 
-#Subsetting MSP crops
+#Creating Average production for MSP and Non-MSP crops by year
 
 ```{r}
-msp_crops <- agri[ which(agri$Crop=='Paddy'| agri$Crop=='Wheat' | agri$Crop=='Maize'| agri$Crop=='Barley'| agri$Crop=='Ragi'| agri$Crop=='Gram'|	agri$Crop=='Arhar/Tur'| agri$Crop=='Moong(Green Gram)'| agri$Crop=='Urad'| agri$Crop=='Masoor'| agri$Crop=='Groundnut'| agri$Crop=='Rapeseed &Mustard'| agri$Crop=='Soyabean'| agri$Crop=='Sesamum'| agri$Crop=='Sunflower'| agri$Crop=='Niger seed'| agri$Crop=='Cotton'| agri$Crop=='Jute & mesta'| agri$Crop=='Jowar'| agri$Crop=='Bajra'| agri$Crop=='Sugarcane'), ]
-```
+agri_sum <- agri %>% 
+  group_by(msp, Crop_Year) %>% 
+  summarise(mean = mean(Production_by_Area, na.rm=TRUE),
+            count = n()) %>% 
+  ungroup()
 
-#Subsetting Non-MSP crops
-
-```{r}
-non_msp_crops <- agri[ which(agri$Crop!='Sugarcane'& agri$Crop!='Wheat'& agri$Crop!='Paddy'&  agri$Crop!='Maize'& agri$Crop!='Barley'& agri$Crop!='Ragi'& agri$Crop!='Gram'&	agri$Crop!='Arhar/Tur'& agri$Crop!='Moong(Green Gram)'& agri$Crop!='Urad'& agri$Crop!='Groundnut'& agri$Crop!='Rapeseed &Mustard'& agri$Crop!='Soyabean'& agri$Crop!='Sesamum'& agri$Crop!='Sunflower'& agri$Crop!='Niger seed'& agri$Crop!='Cotton'& agri$Crop!='Jute & mesta'& agri$Crop!='Total foodgrain'& agri$Crop!='Pulses total'& agri$Crop!='Oilseeds total'& agri$Crop!='Jowar'& agri$Crop!='Bajra'& agri$Crop!='Masoor'), ]
-non_msp_crops$Average_Production_by_Area = mean(non_msp_crops$Production_by_Area, na.rm=TRUE)
+agri_sum
 ```
 
 #Graphing average production tonnes per hectare
 
 ```{r}
-#library(ggplot2)
-ggplot() +
-    geom_point(data = msp_crops, aes(x = Crop_Year, y = Production_by_Area), color = "blue") +
-    geom_point(data = non_msp_crops, aes(x = Crop_Year, y = Production_by_Area), color = "red")
+ggplot(agri_sum) + 
+  aes(x = Crop_Year, y = mean, color = msp) + 
+  geom_line() + 
+  theme_bw()
 ```
-
-#Looking at averages by crop
+#Looking at outliers in MSP vs non-MSP crops. Many non-MSP crops seem to be outliers.
 
 ```{r}
-msp_crops_production <- group_by(msp_crops,Crop)
-msp_crops_production <- summarise(msp_crops_production, Average_Production_by_Area = mean(Production_by_Area, na.rm=TRUE))
-msp_crops_production <- ungroup(msp_crops_production)
-msp_crops_production
-#We find that sugarcane and jute are outliers in mean production_by_area.
+ggplot(filter(agri, !is.na(Production_by_Area))) +
+  aes(x = as.character(Crop_Year), y = log(Production_by_Area), color = msp) +
+  geom_boxplot() +
+  theme_bw()
+```
+
+
+```{r}
+group_by(agri, Crop_Year, Crop) %>%
+  summarise(mean = scales::comma(mean(Production, na.rm = TRUE), accuracy = 1)) %>%
+  pivot_wider(
+    names_from = Crop_Year,
+    values_from = mean
+  )
+```
+
+```{r}
+agri %>% filter(msp == TRUE, log(Production_by_Area) > 10) #there seems to be an issue with the data for Area in Punjab in 2011 leading to the big jump seen in the boxplot for MSP crops. 
+```
+#I will now be analysing data by 1. removing Punjab for Sugarcane for 2011. 2. Multiplying Punjab area by 1000 to correct what we assume is an error in the data. 
+
+#1. Removing Punjab-Sugarcane for 2011
+```{r}
+agri_nopunj <- agri[agri$Crop_Year != 2011 & agri$Crop != "Sugarcane", ]  
+ggplot(filter(agri_nopunj, !is.na(Production_by_Area))) +
+  aes(x = as.character(Crop_Year), y = log(Production_by_Area), color = msp) +
+  geom_boxplot() +
+  theme_bw()
 ```
 ```{r}
-non_msp_crops_production <- group_by(non_msp_crops,Crop)
-non_msp_crops_production <- summarise(non_msp_crops_production, Average_Production_by_Area = mean(Production_by_Area, na.rm=TRUE))
-non_msp_crops_production <- ungroup(non_msp_crops_production)
-non_msp_crops_production
+agri_nopunj_sum <- agri_nopunj %>% 
+  group_by(msp, Crop_Year) %>% 
+  summarise(mean = mean(Production_by_Area, na.rm=TRUE),
+            count = n()) %>% 
+  ungroup()
+
+agri_nopunj_sum
+```
+
+
+```{r}
+ggplot(agri_nopunj_sum) + 
+  aes(x = Crop_Year, y = mean, color = msp) + 
+  geom_line() + 
+  theme_bw()
+```
+
+
+#Looking at outliers in production for non-msp crops
+
+```{r}
+agri_nopunj %>% 
+  group_by(Crop, Crop_Year) %>%
+  filter(msp == FALSE, log(Production_by_Area) > 5) %>%
+  ungroup() #Coconut seems to be an outlier that is driving the massive difference between msp and non-msp crops. 
+```
+```{r}
+agri_nopunj %>% 
+  group_by(Crop, Crop_Year) %>%
+  filter(msp == FALSE, log(Production_by_Area) < -5) %>%
+  ungroup()
+```
+
+
+```{r}
+agri_nopunj_nococo <- agri_nopunj %>% 
+  group_by(Crop, Crop_Year) %>%
+  filter(log(Production_by_Area) < 10 & log(Production_by_Area) > -10) %>%
+  ungroup()
+
+agri_nopunj_nococo
+```
+```{r}
+agri_nopunj_nococo_sum <- agri_nopunj_nococo %>% 
+  group_by(msp, Crop_Year) %>% 
+  summarise(mean = mean(Production_by_Area, na.rm=TRUE),
+            count = n()) %>% 
+  ungroup()
+
+agri_nopunj_nococo_sum
+```
+
+
+```{r}
+ggplot(agri_nopunj_nococo_sum) + 
+  aes(x = Crop_Year, y = mean, color = msp) + 
+  geom_line() + 
+  theme_bw()
 ```
 
 
