@@ -216,7 +216,7 @@ agri_corr <- if(agri$Crop == "Sugarcane" && agri$Crop_Year == 2011 && agri$State
 
 ```{r}
 ggplot(filter(agri_corr, !is.na(Production_by_Area))) +
-  aes(x = as.character(Crop_Year), y = log(Production_by_Area), color = msp) +
+  aes(x = as.character(Crop_Year), y = log(Production_by_Area), color = msp)+
   geom_boxplot() +
   theme_bw()
 ```
