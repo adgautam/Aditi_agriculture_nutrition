@@ -32,54 +32,61 @@ library(janitor)
 # Importing dataset
 
 ```{r}
-nutri_2015 <- read_csv(path("NFHS_2015.csv"))
-spec(nutri_2015)
+nfhs2015 <- read_csv(path("NFHS_2015.csv"))
+spec(nfhs2015)
 ```
 
 ```{r layout="l-body-outset"}
-nutri_2015
+nfhs2015
 ```
 
 ```{r}
-glimpse(nutri_2015)
+glimpse(nfhs2015)
 ```
 
 ```{r}
-skim(nutri_2015)
+skim(nfhs2015)
 ```
 
 Cleaning and standardizing variable names
 
 ```{r}
-nutri_2015 <- clean_names(nutri_2015)
+nfhs2015 <- clean_names(nfhs2015)
 ```
 
 Recoding the values of columns: stunting_range_d, uw_range_d, wasting_range_d
 
 Stunting
 ```{r}
-nutri_2015["stunting_range_d"][nutri_2015["stunting_range_d"] == "Low (< 25%)"] <- "Low"
-nutri_2015["stunting_range_d"][nutri_2015["stunting_range_d"] == "Medium (25% - 40%)"] <- "Medium"
-nutri_2015["stunting_range_d"][nutri_2015["stunting_range_d"] == "High (> 40%)"] <- "High"
+nfhs2015["stunting_range_d"][nfhs2015["stunting_range_d"] == "Low (< 25%)"] <- "Low"
+nfhs2015["stunting_range_d"][nfhs2015["stunting_range_d"] == "Medium (25% - 40%)"] <- "Medium"
+nfhs2015["stunting_range_d"][nfhs2015["stunting_range_d"] == "High (> 40%)"] <- "High"
 ```
 
 Underweight
 ```{r}
-nutri_2015["uw_range_d"][nutri_2015["uw_range_d"] == "Low (< 20%)"] <- "Low"
-nutri_2015["uw_range_d"][nutri_2015["uw_range_d"] == "Medium (20% - 40%)"] <- "Medium"
-nutri_2015["uw_range_d"][nutri_2015["uw_range_d"] == "High (> 40%)"] <- "High"
+nfhs2015["uw_range_d"][nfhs2015["uw_range_d"] == "Low (< 20%)"] <- "Low"
+nfhs2015["uw_range_d"][nfhs2015["uw_range_d"] == "Medium (20% - 40%)"] <- "Medium"
+nfhs2015["uw_range_d"][nfhs2015["uw_range_d"] == "High (> 40%)"] <- "High"
 ```
 
 Wasting
 ```{r}
-nutri_2015["wasting_range_d"][nutri_2015["wasting_range_d"] == "Low (< 15%)"] <- "Low"
-nutri_2015["wasting_range_d"][nutri_2015["wasting_range_d"] == "Medium (15% - 25%)"] <- "Medium"
-nutri_2015["wasting_range_d"][nutri_2015["wasting_range_d"] == "High (> 25%)"] <- "High"
+nfhs2015["wasting_range_d"][nfhs2015["wasting_range_d"] == "Low (< 15%)"] <- "Low"
+nfhs2015["wasting_range_d"][nfhs2015["wasting_range_d"] == "Medium (15% - 25%)"] <- "Medium"
+nfhs2015["wasting_range_d"][nfhs2015["wasting_range_d"] == "High (> 25%)"] <- "High"
 ```
 
 For now, we will be focussing on the three variables related to nutrition: Stunting, Underweight, Wasting
 
 ```{r}
+keeps <- c("state","district","stunting_range_d","uw_range_d","wasting_range_d")
+nfhs2015_subset = nfhs2015[keeps]
+```
 
+Exporting the cleaned dataset
+
+```{r}
+write.csv(nfhs2015, file = "NFHS2015_Cleaned.csv")
 ```
 
