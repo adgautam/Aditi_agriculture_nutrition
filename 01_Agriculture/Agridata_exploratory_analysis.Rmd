@@ -202,19 +202,42 @@ ggplot(agri_nopunj_nococo_sum) +
 dev.copy(png,'Visualizations/Aditi_Graph 4.png')
 ```
 
+Renaming state and district columns
+```{r}
+agri_nopunj_nococo <- agri_nopunj_nococo %>% 
+  rename(
+    state = State_Name,
+    district = District_Name
+    )
+```
+
+
+```{r}
+agri_nopunj_nococo <- agri_nopunj_nococo %>% mutate(state = toupper(state))
+```
+
 Exporting the cleaned dataset
 ```{r}
 write.csv(agri_nopunj_nococo, file = "Agridata_Cleaned_nopunjab.csv")
 ```
 
-
 # 2. Multiplying Punjab area for sugarcane in 2011 by 1000 to correct what we assume is an error in the data
 
 ```{r}
 agri_corr <- agri
-if(agri_corr$Crop == "Sugarcane" && agri_corr$Crop_Year == 2011 && agri_corr$State_name == "Punjab"){
-  agri_corr$Area <- agri_corr$Area*1000
-  agri_corr$Production_by_Area <- agri_corr$Area/1000
+
+agri_corr %>%
+  mutate( 
+    case_when(
+      Crop == "Sugarcane" & Crop_Year == 2011 & State_Name == "Punjab" ~  Area*1000 )
+  )
+```
+
+
+```{r}
+agri_corr %>% if(Crop("Sugarcane") & Crop_Year(2011) & State_name("Punjab")){
+  Area <- agri_corr$Area*1000
+  Production_by_Area <- agri_corr$Area/1000
   }
 ```
 
@@ -223,6 +246,35 @@ ggplot(filter(agri_corr, !is.na(Production_by_Area))) +
   aes(x = as.character(Crop_Year), y = log(Production_by_Area), color = msp)+
   geom_boxplot() +
   theme_bw()
+dev.copy(png,'Visualizations/Aditi_Graph 5.png')
 ```
 
+```{r}
+agri_corr_sum <- agri_corr %>% 
+  group_by(msp, Crop_Year) %>% 
+  summarise(mean = mean(Production_by_Area, na.rm=TRUE),
+            count = n()) %>% 
+  ungroup()
 
+agri_corr_sum
+```
+
+```{r}
+ggplot(agri_corr_sum) + 
+  aes(x = Crop_Year, y = mean, color = msp) + 
+  geom_line() + 
+  theme_bw() +
+  labs(
+    title = 'Average Production by Area by Year - Without the MSP and non-MSP Outliers',
+    subtitle = "Non-MSP crops still have a much higher Production but it is more comparable",
+    x = "Year",
+    y = "Log of Production by Area (tonnes per hectare)",
+    caption = "Source: Ministry of Agriculture, India"
+  )
+dev.copy(png,'Visualizations/Aditi_Graph 6.png')
+```
+
+Exporting the cleaned dataset
+```{r}
+write.csv(agri_corr, file = "Agridata_Cleaned_Corrected.csv")
+```

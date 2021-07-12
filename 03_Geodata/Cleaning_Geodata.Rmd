@@ -1,0 +1,38 @@
+---
+title: "Geodata_districts"
+author: "Aditi Gautam"
+date: "12/07/2021"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = TRUE,
+	message = FALSE,
+	warning = FALSE,
+	rows.print=5
+)
+
+options(tibble.max_extra_cols = 5, tibble.print_max = 5)
+
+library(sf)
+library(tidyverse)
+```
+
+Reading the Geo data for Indian districts
+```{r}
+districts <- read_sf(path("data/polbnda_ind.shp"))
+```
+
+Renaming state and district columns
+```{r}
+districts <- districts %>% 
+  rename(
+    state = nam,
+    district = laa
+    )
+```
+
+Exporting the cleaned dataset
+```{r}
+st_write(districts, "Geodata_Cleaned.shp")
+```

@@ -84,9 +84,14 @@ keeps <- c("state","district","stunting_range_d","uw_range_d","wasting_range_d")
 nfhs2015_subset = nfhs2015[keeps]
 ```
 
+```{r}
+nfhs2015_subset <- nfhs2015_subset %>% mutate(state = toupper(state))
+nfhs2015_subset <- nfhs2015_subset %>% mutate(district = toupper(district))
+```
+
 Exporting the cleaned dataset
 
 ```{r}
-write.csv(nfhs2015, file = "NFHS2015_Cleaned.csv")
+write.csv(nfhs2015_subset, file = "NFHS2015_Cleaned.csv")
 ```
 

@@ -1,0 +1,34 @@
+---
+title: "Merging_All_Datasets"
+author: "Aditi Gautam"
+date: "12/07/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = TRUE,
+	message = FALSE,
+	warning = FALSE,
+	rows.print=5
+)
+
+options(tibble.max_extra_cols = 5, tibble.print_max = 5)
+
+library(fs) # cross-platform file system operations
+library(tidyverse)
+library(skimr)
+```
+
+Loading all datasets
+```{r}
+agri <- read_csv(path("01_Agriculture/Agridata_Cleaned_nopunjab.csv"))
+nfhs2015 <- read_csv(path("02_Nutrition/NFHS2015_Cleaned.csv"))
+districts <- read_csv(path("03_Geodata/Geodata_Cleaned.csv"))
+```
+
+
+```{r}
+merged_data <- merge(agri, nfhs2015, by.x = "district", by.y = "district")
+merged_data <- merge(merged_data, districts, by.x = "district", by.y = "district")
+```
