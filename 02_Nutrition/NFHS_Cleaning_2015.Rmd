@@ -25,23 +25,61 @@ options(tibble.max_extra_cols = 5, tibble.print_max = 5)
 library(fs) # cross-platform file system operations
 library(tidyverse)
 library(skimr)
+library(readxl)
+library(janitor)
 ```
 
 # Importing dataset
 
 ```{r}
-nutri_2015 <- read_csv(path("NFHS_2015.csv"), col_types = cols(S = "c"))
+nutri_2015 <- read_csv(path("NFHS_2015.csv"))
+spec(nutri_2015)
 ```
+
 ```{r layout="l-body-outset"}
 nutri_2015
 ```
 
 ```{r}
-#library(dplyr)
 glimpse(nutri_2015)
 ```
 
 ```{r}
-#library(skimr)
 skim(nutri_2015)
 ```
+
+Cleaning and standardizing variable names
+
+```{r}
+nutri_2015 <- clean_names(nutri_2015)
+```
+
+Recoding the values of columns: stunting_range_d, uw_range_d, wasting_range_d
+
+Stunting
+```{r}
+nutri_2015["stunting_range_d"][nutri_2015["stunting_range_d"] == "Low (< 25%)"] <- "Low"
+nutri_2015["stunting_range_d"][nutri_2015["stunting_range_d"] == "Medium (25% - 40%)"] <- "Medium"
+nutri_2015["stunting_range_d"][nutri_2015["stunting_range_d"] == "High (> 40%)"] <- "High"
+```
+
+Underweight
+```{r}
+nutri_2015["uw_range_d"][nutri_2015["uw_range_d"] == "Low (< 20%)"] <- "Low"
+nutri_2015["uw_range_d"][nutri_2015["uw_range_d"] == "Medium (20% - 40%)"] <- "Medium"
+nutri_2015["uw_range_d"][nutri_2015["uw_range_d"] == "High (> 40%)"] <- "High"
+```
+
+Wasting
+```{r}
+nutri_2015["wasting_range_d"][nutri_2015["wasting_range_d"] == "Low (< 15%)"] <- "Low"
+nutri_2015["wasting_range_d"][nutri_2015["wasting_range_d"] == "Medium (15% - 25%)"] <- "Medium"
+nutri_2015["wasting_range_d"][nutri_2015["wasting_range_d"] == "High (> 25%)"] <- "High"
+```
+
+For now, we will be focussing on the three variables related to nutrition: Stunting, Underweight, Wasting
+
+```{r}
+
+```
+
