@@ -9,13 +9,13 @@ GitHub: https://github.com/adgautam
 
 ## Data Sources
 ***
-###1. Agriculture: 
+### 1. Agriculture: 
 Crop Production statistics from the Open Data site for government data in India. The data is from 1997-2015 and lists the area and amount of production by district. The data is from the Ministry of Agriculture of India. Link to the dataset: https://data.gov.in/catalog/district-wise-season-wise-crop-production-statistics?filters%5Bfield_catalog_reference%5D=87631&format=json&offset=0&limit=6&sort%5Bcreated%5D=desc
 
-###2. Nutrition: 
+### 2. Nutrition: 
 Health and nutrition data is from the Indian Human Development survey (IHDS): IHDS I (2004-5) & IHDS II (2011-12). It is a longitudinal, nationally representative survey conducted by a group of universities in the US. I downloaded the data that is at the household level instead of the individual level since I will be aggregating it to the district anyway. Link to the dataset: https://www.icpsr.umich.edu/web/DSDR/studies/22626
 
-###3. Geodata: 
+### 3. Geodata: 
 I also was to spatially show the difference in farming regions and nutrition across districts in India. I will be merging the file with geodata by district. Link to the dataset: https://geodata.mit.edu/catalog/stanford-sh819zz8121
 
 ## Folder Structure
@@ -31,11 +31,11 @@ The main folder contains the code for combining the datasets and doing the final
 
 ## Reproducing the Analysis
 ***
-###Step 1: 
+### Step 1: 
 Clone the repository.
-###Step 2:
+### Step 2:
 Run the code in the Agriculture folder to clean the agriculture dataset. Repeat for Nutrition and Geodata.
-###Step 3:
+### Step 3:
 Run the code in the main folder to merge the clean datasets and produce the main analysis. 
 
 Contact if you are facing any issues at aditigautam1995@gmail.com.
