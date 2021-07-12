@@ -64,7 +64,7 @@ agri
 ```{r}
 agri_sum <- agri %>% 
   group_by(msp, Crop_Year) %>% 
-  summarise(mean = mean(Production_by_Area, na.rm=TRUE),
+  summarise(Average_Production_by_Area = mean(Production_by_Area, na.rm=TRUE),
             count = n()) %>% 
   ungroup()
 
@@ -75,9 +75,17 @@ agri_sum
 
 ```{r}
 ggplot(agri_sum) + 
-  aes(x = Crop_Year, y = mean, color = msp) + 
+  aes(x = Crop_Year, y = Average_Production_by_Area, color = msp) + 
   geom_line() + 
+  labs(
+    title = 'Production by Area by Year - MSP vs Non-MSP crops',
+    subtitle = "Non-MSP crops have a much greater Production by Area compared to MSP",
+    x = "Year",
+    y = "Production by Area (tonnes per hectare)",
+    caption = "Source: Ministry of Agriculture, India"
+  ) +
   theme_bw()
+dev.copy(png,'Aditi_Graph 1.png')
 ```
 #Looking at outliers in MSP vs non-MSP crops. Many non-MSP crops seem to be outliers.
 
@@ -85,7 +93,15 @@ ggplot(agri_sum) +
 ggplot(filter(agri, !is.na(Production_by_Area))) +
   aes(x = as.character(Crop_Year), y = log(Production_by_Area), color = msp) +
   geom_boxplot() +
-  theme_bw()
+  theme_bw() +
+   labs(
+    title = 'Log of Production by Area by Year - MSP vs Non-MSP crops (Checking for outliers)',
+    subtitle = "Non-MSP crops have a much higher Production except in 2011",
+    x = "Year",
+    y = "Log of Production by Area (tonnes per hectare)",
+    caption = "Source: Ministry of Agriculture, India"
+  )
+dev.copy(png,'Aditi_Graph 2.png')
 ```
 
 
@@ -101,7 +117,7 @@ group_by(agri, Crop_Year, Crop) %>%
 ```{r}
 agri %>% filter(msp == TRUE, log(Production_by_Area) > 10) #there seems to be an issue with the data for Area in Punjab in 2011 leading to the big jump seen in the boxplot for MSP crops. 
 ```
-#I will now be analysing data by 1. removing Punjab for Sugarcane for 2011. 2. Multiplying Punjab area by 1000 to correct what we assume is an error in the data. 
+#I will now be analysing data by 1. removing Punjab for Sugarcane for 2011. 2. Multiplying Punjab area for sugarcane in 2011 by 1000 to correct what we assume is an error in the data. 
 
 #1. Removing Punjab-Sugarcane for 2011
 ```{r}
@@ -126,7 +142,15 @@ agri_nopunj_sum
 ggplot(agri_nopunj_sum) + 
   aes(x = Crop_Year, y = mean, color = msp) + 
   geom_line() + 
-  theme_bw()
+  theme_bw() + 
+     labs(
+    title = 'Average Production by Area by Year - Without the MSP Outlier',
+    subtitle = "Non-MSP crops still have a much higher Production",
+    x = "Year",
+    y = "Log of Production by Area (tonnes per hectare)",
+    caption = "Source: Ministry of Agriculture, India"
+  )
+dev.copy(png,'Aditi_Graph 3.png')
 ```
 
 
@@ -138,22 +162,23 @@ agri_nopunj %>%
   filter(msp == FALSE, log(Production_by_Area) > 5) %>%
   ungroup() #Coconut seems to be an outlier that is driving the massive difference between msp and non-msp crops. 
 ```
-```{r}
-agri_nopunj %>% 
-  group_by(Crop, Crop_Year) %>%
-  filter(msp == FALSE, log(Production_by_Area) < -5) %>%
-  ungroup()
-```
-
 
 ```{r}
 agri_nopunj_nococo <- agri_nopunj %>% 
   group_by(Crop, Crop_Year) %>%
-  filter(log(Production_by_Area) < 10 & log(Production_by_Area) > -10) %>%
+  filter(log(Production_by_Area) < 5) %>%
   ungroup()
 
 agri_nopunj_nococo
 ```
+```{r}
+ggplot(filter(agri_nopunj_nococo, !is.na(Production_by_Area))) +
+  aes(x = as.character(Crop_Year), y = log(Production_by_Area), color = msp) +
+  geom_boxplot() +
+  theme_bw()
+```
+
+
 ```{r}
 agri_nopunj_nococo_sum <- agri_nopunj_nococo %>% 
   group_by(msp, Crop_Year) %>% 
@@ -169,8 +194,31 @@ agri_nopunj_nococo_sum
 ggplot(agri_nopunj_nococo_sum) + 
   aes(x = Crop_Year, y = mean, color = msp) + 
   geom_line() + 
-  theme_bw()
+  theme_bw() +
+  labs(
+    title = 'Average Production by Area by Year - Without the MSP and non-MSP Outliers',
+    subtitle = "Non-MSP crops still have a much higher Production but it is more comparable",
+    x = "Year",
+    y = "Log of Production by Area (tonnes per hectare)",
+    caption = "Source: Ministry of Agriculture, India"
+  )
+dev.copy(png,'Aditi_Graph 4.png')
 ```
 
+#2. Multiplying Punjab area for sugarcane in 2011 by 1000 to correct what we assume is an error in the data
+
+```{r}
+agri_corr <- if(agri$Crop == "Sugarcane" && agri$Crop_Year == 2011 && agri$State_name == "Punjab"){
+  agri$Area = agri$Area*1000
+  agri$Production_by_Area = agri$Production_by_Area*1000
+  }
+```
+
+```{r}
+ggplot(filter(agri_corr, !is.na(Production_by_Area))) +
+  aes(x = as.character(Crop_Year), y = log(Production_by_Area), color = msp) +
+  geom_boxplot() +
+  theme_bw()
+```
 
 
