@@ -1,7 +1,7 @@
 ---
-title: "Nutrition Dataset Exploratory Analysis - 2015"
+title: "Nutrition Dataset Exploratory Analysis -2015"
 description: |
-  Exploratory analysis of the NFHS data for 2015-16. 
+  Exploratory analysis of the NFHS survey data from 2015-16. 
 author:
   - name: Aditi Gautam
     url: https://github.com/adgautam
@@ -27,14 +27,11 @@ library(tidyverse)
 library(skimr)
 ```
 
-#Importing dataset for 2015-16
+# Importing dataset
 
 ```{r}
-nutri_2015 <- read_csv(path("NFHS_2015.csv"), list(col_character(),col_character(),col_character(),col_character(),col_integer(),col_character(),col_character(),col_character(),col_double()))
+nutri_2015 <- read_csv(path("NFHS_2015.csv"), col_types = cols(S = "c"))
 ```
-
-#Exploring and summarizing the dataset
-
 ```{r layout="l-body-outset"}
 nutri_2015
 ```
@@ -48,6 +45,3 @@ glimpse(nutri_2015)
 #library(skimr)
 skim(nutri_2015)
 ```
-
-
-

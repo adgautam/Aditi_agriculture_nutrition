@@ -30,7 +30,7 @@ library(skimr)
 # Importing dataset
 
 ```{r}
-agri <- read_csv(path("Agriculture_1970_2015.csv"))
+agri <- read_csv(path("Agriculture_1997_2015.csv"))
 ```
 
 # Exploring and summarizing the dataset
