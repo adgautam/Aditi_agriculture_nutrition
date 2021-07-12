@@ -27,13 +27,13 @@ library(tidyverse)
 library(skimr)
 ```
 
-#Importing dataset
+# Importing dataset
 
 ```{r}
 agri <- read_csv(path("Agriculture_1970_2015.csv"))
 ```
 
-#Exploring and summarizing the dataset
+# Exploring and summarizing the dataset
 
 ```{r layout="l-body-outset"}
 agri
@@ -49,7 +49,7 @@ glimpse(agri)
 skim(agri)
 ```
 
-#Creating column for calculating Production tonnes per hectare and to identify MSP crops 
+# Creating column for calculating Production tonnes per hectare and to identify MSP crops 
 
 ```{r}
 agri <- agri %>% mutate(
@@ -59,7 +59,7 @@ agri <- agri %>% mutate(
 agri
 ```
 
-#Creating Average production for MSP and Non-MSP crops by year
+# Creating Average production for MSP and Non-MSP crops by year
 
 ```{r}
 agri_sum <- agri %>% 
@@ -71,7 +71,7 @@ agri_sum <- agri %>%
 agri_sum
 ```
 
-#Graphing average production tonnes per hectare
+# Graphing average production tonnes per hectare
 
 ```{r}
 ggplot(agri_sum) + 
@@ -87,7 +87,7 @@ ggplot(agri_sum) +
   theme_bw()
 dev.copy(png,'Visualizations/Aditi_Graph 1.png')
 ```
-#Looking at outliers in MSP vs non-MSP crops. Many non-MSP crops seem to be outliers.
+# Looking at outliers in MSP vs non-MSP crops. Many non-MSP crops seem to be outliers.
 
 ```{r}
 ggplot(filter(agri, !is.na(Production_by_Area))) +
@@ -117,9 +117,9 @@ group_by(agri, Crop_Year, Crop) %>%
 ```{r}
 agri %>% filter(msp == TRUE, log(Production_by_Area) > 10) #there seems to be an issue with the data for Area in Punjab in 2011 leading to the big jump seen in the boxplot for MSP crops. 
 ```
-#I will now be analysing data by 1. removing Punjab for Sugarcane for 2011. 2. Multiplying Punjab area for sugarcane in 2011 by 1000 to correct what we assume is an error in the data. 
+# I will now be analysing data by 1. removing Punjab for Sugarcane for 2011. 2. Multiplying Punjab area for sugarcane in 2011 by 1000 to correct what we assume is an error in the data. 
 
-#1. Removing Punjab-Sugarcane for 2011
+# 1. Removing Punjab-Sugarcane for 2011
 ```{r}
 agri_nopunj <- agri[agri$Crop_Year != 2011 & agri$Crop != "Sugarcane", ]  
 ggplot(filter(agri_nopunj, !is.na(Production_by_Area))) +
@@ -154,7 +154,7 @@ dev.copy(png,'Visualizations/Aditi_Graph 3.png')
 ```
 
 
-#Looking at outliers in production for non-msp crops
+# Looking at outliers in production for non-msp crops
 
 ```{r}
 agri_nopunj %>% 
@@ -205,7 +205,7 @@ ggplot(agri_nopunj_nococo_sum) +
 dev.copy(png,'Visualizations/Aditi_Graph 4.png')
 ```
 
-#2. Multiplying Punjab area for sugarcane in 2011 by 1000 to correct what we assume is an error in the data
+# 2. Multiplying Punjab area for sugarcane in 2011 by 1000 to correct what we assume is an error in the data
 
 ```{r}
 agri_corr <- if(agri$Crop == "Sugarcane" && agri$Crop_Year == 2011 && agri$State_name == "Punjab"){

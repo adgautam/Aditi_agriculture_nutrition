@@ -1,0 +1,53 @@
+---
+title: "Nutrition Dataset Exploratory Analysis - 2015"
+description: |
+  Exploratory analysis of the NFHS data for 2015-16. 
+author:
+  - name: Aditi Gautam
+    url: https://github.com/adgautam
+date: "`r Sys.Date()`"
+output: 
+    radix::radix_article:
+      toc: true
+      toc_depth: 3
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = TRUE,
+	message = FALSE,
+	warning = FALSE,
+	rows.print=5
+)
+
+options(tibble.max_extra_cols = 5, tibble.print_max = 5)
+
+library(fs) # cross-platform file system operations
+library(tidyverse)
+library(skimr)
+```
+
+#Importing dataset for 2015-16
+
+```{r}
+nutri_2015 <- read_csv(path("NFHS_2015.csv"), list(col_character(),col_character(),col_character(),col_character(),col_integer(),col_character(),col_character(),col_character(),col_double()))
+```
+
+#Exploring and summarizing the dataset
+
+```{r layout="l-body-outset"}
+nutri_2015
+```
+
+```{r}
+#library(dplyr)
+glimpse(nutri_2015)
+```
+
+```{r}
+#library(skimr)
+skim(nutri_2015)
+```
+
+
+

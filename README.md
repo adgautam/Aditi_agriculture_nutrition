@@ -25,7 +25,7 @@ I also was to spatially show the difference in farming regions and nutrition acr
 This folder contains the codes, visualization and data specific to agricuture data.
 ### 02_Nutrition
 This folder contains the codes, visualization and data specific to nutrition data.
-### 02_Nutrition
+### 03_Geodata
 This folder contains the codes, visualization and data specific to geodata. 
 ### Main
 The main folder contains the code for combining the datasets and doing the final analysis. 
