@@ -30,7 +30,7 @@ library(skimr)
 #Importing dataset
 
 ```{r}
-agri <- read_csv(path("apy.csv"))
+agri <- read_csv(path("Agriculture_1970_2015.csv"))
 ```
 
 #Exploring and summarizing the dataset
@@ -85,7 +85,7 @@ ggplot(agri_sum) +
     caption = "Source: Ministry of Agriculture, India"
   ) +
   theme_bw()
-dev.copy(png,'Aditi_Graph 1.png')
+dev.copy(png,'Visualizations/Aditi_Graph 1.png')
 ```
 #Looking at outliers in MSP vs non-MSP crops. Many non-MSP crops seem to be outliers.
 
@@ -101,7 +101,7 @@ ggplot(filter(agri, !is.na(Production_by_Area))) +
     y = "Log of Production by Area (tonnes per hectare)",
     caption = "Source: Ministry of Agriculture, India"
   )
-dev.copy(png,'Aditi_Graph 2.png')
+dev.copy(png,'Visualizations/Aditi_Graph 2.png')
 ```
 
 
@@ -150,7 +150,7 @@ ggplot(agri_nopunj_sum) +
     y = "Log of Production by Area (tonnes per hectare)",
     caption = "Source: Ministry of Agriculture, India"
   )
-dev.copy(png,'Aditi_Graph 3.png')
+dev.copy(png,'Visualizations/Aditi_Graph 3.png')
 ```
 
 
@@ -202,7 +202,7 @@ ggplot(agri_nopunj_nococo_sum) +
     y = "Log of Production by Area (tonnes per hectare)",
     caption = "Source: Ministry of Agriculture, India"
   )
-dev.copy(png,'Aditi_Graph 4.png')
+dev.copy(png,'Visualizations/Aditi_Graph 4.png')
 ```
 
 #2. Multiplying Punjab area for sugarcane in 2011 by 1000 to correct what we assume is an error in the data
