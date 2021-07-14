@@ -25,17 +25,19 @@ Loading all datasets
 ```{r}
 agri <- read_csv(path("01_Agriculture/Agridata_Cleaned_nopunjab.csv"))
 nfhs2015 <- read_csv(path("02_Nutrition/NFHS2015_Cleaned.csv"))
-districts <- read_sf(path("03_Geodata/data/polbnda_ind.shp"))
+districts <- read_sf(path("03_Geodata/data/polbnda_ind.shp")) 
 ```
 
 
 ```{r}
 agri_nfhs <- merge(agri, nfhs2015, by.x = "district", by.y = "district")
-merged_data <- merge(districts, agri_nfhs, by.x = "laa", by.y = "district")
+merged_data <- merge(districts, agri_nfhs, by.x = "laa", by.y = "district") %>% st_as_sf() 
+distinct(merged_data)
 ```
 
 ```{r}
-ggplot(data = districts) +
-    geom_sf()
+ggplot(data = merged_data) +
+    geom_sf(aes(fill = stunting_range_d))
 ```
 
+https://r-spatial.github.io/sf/reference/geos_unary.html
