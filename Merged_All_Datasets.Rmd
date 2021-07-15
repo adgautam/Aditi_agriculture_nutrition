@@ -20,6 +20,8 @@ library(tidyverse)
 library(skimr)
 library(sf)
 library(viridis)
+library(MASS)
+library(effects)
 ```
 
 Loading all datasets
@@ -59,6 +61,8 @@ agri_msp_bydistrict <- group_by(agri2014, district, msp_nomsp) %>%
     values_from = mean
   )
 agri_msp_bydistrict <- agri_msp_bydistrict %>% mutate_if(is.character,as.numeric)
+
+agri_msp_bydistrict$MSP <- replace(agri_msp_bydistrict$MSP, which(agri_msp_bydistrict$MSP > 15), NA)
 ```
 
 ```{r}
@@ -130,8 +134,62 @@ ggplot(data = merged) +
 ggplot(data = merged) +
     geom_sf(aes(fill = Rice))
 ```
-
 ```{r}
-
+ggplot(data = merged) +
+    geom_sf(aes(fill = Wheat))
 ```
 
+```{r}
+ggplot(data = merged) +
+    geom_sf(aes(fill = Sugarcane))
+```
+
+Regressions
+
+```{r}
+regression_msp = polr(as.factor(stunting_range) ~ MSP, data = merged, Hess=TRUE) 
+summary(regression_msp)
+```
+
+```{r}
+ctable <- coef(summary(regression_msp))
+p <- pnorm(abs(ctable[, "t value"]), lower.tail = FALSE) * 2
+ctable <- cbind(ctable, "p value" = p)
+ctable
+```
+
+```{r}
+regression_non_msp = polr(as.factor(stunting_range) ~ Non_MSP, data = merged, Hess=TRUE) 
+summary(regression_non_msp)
+```
+
+```{r}
+ctable1 <- coef(summary(regression_non_msp))
+p <- pnorm(abs(ctable1[, "t value"]), lower.tail = FALSE) * 2
+ctable1 <- cbind(ctable1, "p value" = p)
+ctable1
+```
+
+```{r}
+regression_msp_controls = polr(as.factor(stunting_range) ~ MSP+x12_women_who_are_literate_percent, data = merged, Hess=TRUE) 
+summary(regression_msp_controls)
+```
+
+```{r}
+ctable2 <- coef(summary(regression_msp_controls))
+p <- pnorm(abs(ctable2[, "t value"]), lower.tail = FALSE) * 2
+ctable2 <- cbind(ctable2, "p value" = p)
+ctable2
+```
+
+```{r}
+regression_msp_controls2 = polr(as.factor(stunting_range) ~ MSP + rural_population_percapita + x13_men_who_are_literate_percent, data = merged, Hess=TRUE) 
+summary(regression_msp_controls2)
+```
+
+```{r}
+ctable3 <- coef(summary(regression_msp_controls2))
+p <- pnorm(abs(ctable2[, "t value"]), lower.tail = FALSE) * 2
+ctable3 <- cbind(ctable3, "p value" = p)
+ctable3
+```

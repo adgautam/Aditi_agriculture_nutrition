@@ -57,7 +57,7 @@ nfhs2015 <- clean_names(nfhs2015)
 For now, we will be focussing on the three variables related to nutrition: Stunting, Underweight, Wasting
 
 ```{r}
-keeps <- c("state","district","stunting_range_d","uw_range_d","wasting_range_d")
+keeps <- c("state","district","stunting_range_d","uw_range_d","wasting_range_d","rural_population","urban_population","total_population","x12_women_who_are_literate_percent","x13_men_who_are_literate_percent")
 nfhs2015_subset = nfhs2015[keeps]
 ```
 
@@ -90,7 +90,7 @@ nfhs2015_subset$wasting_range <- as.numeric(nfhs2015_subset$wasting_range_d)
 Dropping extra variables
 
 ```{r}
-keeps <- c("state","district","stunting_range","uw_range","wasting_range")
+keeps <- c("state","district","stunting_range","uw_range","wasting_range","rural_population","urban_population","total_population","x12_women_who_are_literate_percent","x13_men_who_are_literate_percent")
 nfhs2015_subset = nfhs2015_subset[keeps]
 ```
 
