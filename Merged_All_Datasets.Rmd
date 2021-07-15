@@ -22,6 +22,8 @@ library(sf)
 library(viridis)
 library(MASS)
 library(effects)
+library(ggplot2)
+library(ggiraph)
 ```
 
 Loading all datasets
@@ -110,38 +112,182 @@ merged <- left_join(districts, merged, by = "district") %>% st_as_sf()
 #merged <- distinct(merged, District_Name, .keep_all= TRUE)
 ```
 
+Maps
+
 ```{r}
 ggplot(data = merged) +
-    geom_sf(aes(fill = stunting_range))
-```
-```{r}
-ggplot(data = merged) +
-    geom_sf(aes(fill = uw_range))
-```
-```{r}
-ggplot(data = merged) +
-    geom_sf(aes(fill = wasting_range))
-```
-```{r}
-ggplot(data = merged) +
-    geom_sf(aes(fill = MSP))
-```
-```{r}
-ggplot(data = merged) +
-    geom_sf(aes(fill = Non_MSP))
-```
-```{r}
-ggplot(data = merged) +
-    geom_sf(aes(fill = Rice))
-```
-```{r}
-ggplot(data = merged) +
-    geom_sf(aes(fill = Wheat))
+  geom_sf(aes(fill = stunting_range))+
+  scale_fill_viridis_c(alpha = 0.75)+
+  xlab("Longitude") +
+  ylab("Latitude") +
+  labs(
+    title = "Stunting Across Districts",
+    subtitle = "From Low to High",
+    caption = "Source: NFHS, 2015",
+  ) + 
+  theme_bw() +
+  theme(
+    panel.grid.major = ggplot2::element_line(
+      color = gray(0.5), linetype = "dashed", size = 0.5
+    ),
+    panel.background = ggplot2::element_rect(fill = gray(0.75))
+  )
+
+ggsave("04_Visualizations/stunting_map.png")
 ```
 
 ```{r}
 ggplot(data = merged) +
-    geom_sf(aes(fill = Sugarcane))
+  geom_sf(aes(fill = uw_range))+
+  scale_fill_viridis_c(alpha = 0.75)+
+  xlab("Longitude") +
+  ylab("Latitude") +
+  labs(
+    title = "Underweight Across Districts",
+    subtitle = "From Low to High",
+    caption = "Source: NFHS, 2015",
+  ) + 
+  theme_bw() +
+  theme(
+    panel.grid.major = ggplot2::element_line(
+      color = gray(0.5), linetype = "dashed", size = 0.5
+    ),
+    panel.background = ggplot2::element_rect(fill = gray(0.75))
+  )
+ggsave("04_Visualizations/uw_map.png")
+```
+
+```{r}
+ggplot(data = merged) +
+  geom_sf(aes(fill = wasting_range))+
+  scale_fill_viridis_c(alpha = 0.75)+
+  xlab("Longitude") +
+  ylab("Latitude") +
+  labs(
+    title = "Wasting Across Districts",
+    subtitle = "From Low to High",
+    caption = "Source: NFHS, 2015",
+  ) + 
+  theme_bw() +
+  theme(
+    panel.grid.major = ggplot2::element_line(
+      color = gray(0.5), linetype = "dashed", size = 0.5
+    ),
+    panel.background = ggplot2::element_rect(fill = gray(0.75))
+  )
+
+ggsave("04_Visualizations/wasting_map.png")
+```
+
+```{r}
+ggplot(data = merged) +
+  geom_sf(aes(fill = MSP)) +
+  xlab("Longitude") +
+  ylab("Latitude") +
+  labs(
+    title = "MSP Yield Across Districts (2010-2014)",
+    caption = "Source: Ministry of Agriculture, India",
+  ) + 
+  theme_bw() +
+  theme(
+    panel.grid.major = ggplot2::element_line(
+      color = gray(0.5), linetype = "dashed", size = 0.5
+    ),
+    panel.background = ggplot2::element_rect(fill = gray(0.75))
+  )
+
+ggsave("04_Visualizations/MSP_map.png")
+```
+
+```{r}
+ggplot(data = merged) +
+    geom_sf(aes(fill = Non_MSP)) +
+  xlab("Longitude") +
+  ylab("Latitude") +
+  labs(
+    title = "Non-MSP Yield Across Districts (2010-2014)",
+    caption = "Source: Ministry of Agriculture, India",
+  ) + 
+  theme_bw() +
+  theme(
+    panel.grid.major = ggplot2::element_line(
+      color = gray(0.5), linetype = "dashed", size = 0.5
+    ),
+    panel.background = ggplot2::element_rect(fill = gray(0.75))
+  )
+
+ggsave("04_Visualizations/Non_MSP_map.png")
+```
+
+```{r}
+ggplot(data = merged) +
+  geom_sf(aes(fill = Rice)) +
+  xlab("Longitude") +
+  ylab("Latitude") +
+  labs(
+    title = "Rice Yield Across Districts (2010-2014)",
+    caption = "Source: Ministry of Agriculture, India",
+  ) + 
+  theme_bw() +
+  theme(
+    panel.grid.major = ggplot2::element_line(
+      color = gray(0.5), linetype = "dashed", size = 0.5
+    ),
+    panel.background = ggplot2::element_rect(fill = gray(0.75))
+  )
+
+ggsave("04_Visualizations/Rice_map.png")
+```
+
+```{r}
+ggplot(data = merged) +
+    geom_sf(aes(fill = Wheat)) +
+  xlab("Longitude") +
+  ylab("Latitude") +
+  labs(
+    title = "Wheat Yield Across Districts (2010-2014)",
+    caption = "Source: Ministry of Agriculture, India",
+  ) + 
+  theme_bw() +
+  theme(
+    panel.grid.major = ggplot2::element_line(
+      color = gray(0.5), linetype = "dashed", size = 0.5
+    ),
+    panel.background = ggplot2::element_rect(fill = gray(0.75))
+  )
+
+ggsave("04_Visualizations/Wheat_map.png")
+```
+
+```{r}
+ggplot(data = merged) +
+    geom_sf(aes(fill = Sugarcane)) +
+  xlab("Longitude") +
+  ylab("Latitude") +
+  labs(
+    title = "Sugarcane Yield Across Districts (2010-2014)",
+    caption = "Source: Ministry of Agriculture, India",
+  ) + 
+  theme_bw() +
+  theme(
+    panel.grid.major = ggplot2::element_line(
+      color = gray(0.5), linetype = "dashed", size = 0.5
+    ),
+    panel.background = ggplot2::element_rect(fill = gray(0.75))
+  )
+
+ggsave("04_Visualizations/Sugarcane_map.png")
+```
+
+Interactive Maps
+
+```{r}
+gg <- ggplot(data = merged) +
+    geom_sf_interactive(aes(geometry = mid,
+      size = stunting_range, tooltip = district, data_id = district),
+      show.legend = "point")
+  x <- girafe( ggobj = gg)
+  if( interactive() ) print(x)
 ```
 
 Regressions
