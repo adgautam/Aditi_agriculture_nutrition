@@ -24,18 +24,23 @@ library(MASS)
 library(effects)
 library(ggplot2)
 library(ggiraph)
+library(formattable)
 ```
 
 Loading all datasets
 ```{r}
 agri <- read_csv(path("01_Agriculture/Agridata_Cleaned_Corrected.csv"))
-nfhs2015 <- read_csv(path("02_Nutrition/NFHS2015_Cleaned.csv"))
+nfhs2015 <- read_csv(path("02_Nutrition/NFHS2015_Cleaned_edited.csv"))
 districts <- read_sf(path("03_Geodata/data/polbnda_ind.shp")) 
 ```
 
 ```{r}
 districts <- districts %>% 
   rename(district = laa)
+nfhs2015 <- nfhs2015 %>% 
+  rename(literacy_women = x12_women_who_are_literate_percent) %>%
+  rename(literacy_men = x13_men_who_are_literate_percent) %>%
+  rename(rural_population = rural_population_percapita)
 ```
 
 
@@ -285,108 +290,139 @@ ggsave("04_Visualizations/Sugarcane_map.png")
 Interactive Maps
 
 ```{r}
-#gg <- ggplot(data = merged) +
-    #geom_sf_interactive(aes(geometry = mid,
-      #size = stunting_range, tooltip = district, data_id = district),
-      #show.legend = "point")
-  #x <- girafe( ggobj = gg)
-  #if( interactive() ) print(x)
+#g <- list(
+  #scope = 'usa',
+  #projection = list(type = 'albers usa'),
+  #lakecolor = toRGB('white')
+#)
+
+#plot_geo() %>%
+ # add_trace(
+  #  z = ~density, text = state.name, span = I(0),
+   # locations = state.abb, locationmode = 'USA-states'
+  #) %>%
+  #layout(geo = g)
 ```
 
 Regressions
 
+1a. Stunting - MSP
+
 ```{r}
 regression_msp = polr(as.factor(stunting_range) ~ MSP, data = merged, Hess=TRUE) 
-summary(regression_msp)
+ctable1a <- coef(summary(regression_msp))
+p <- pnorm(abs(ctable1a[, "t value"]), lower.tail = FALSE) * 2
+ctable1a <- cbind(ctable1a, "p value" = p)
+ctable1a
 ```
 
-```{r}
-ctable <- coef(summary(regression_msp))
-p <- pnorm(abs(ctable[, "t value"]), lower.tail = FALSE) * 2
-ctable <- cbind(ctable, "p value" = p)
-ctable
-```
+
+1b. Stunting - Non-MSP
 
 ```{r}
-regression_non_msp = polr(as.factor(stunting_range) ~ Non_MSP, data = merged, Hess=TRUE) 
-summary(regression_non_msp)
+regression_nonmsp_stunting = polr(as.factor(stunting_range) ~ Non_MSP, data = merged, Hess=TRUE)
+ctable1b <- coef(summary(regression_nonmsp_stunting))
+p <- pnorm(abs(ctable1b[, "t value"]), lower.tail = FALSE) * 2
+ctable1b <- cbind(ctable1b, "p value" = p)
+ctable1b
 ```
 
-```{r}
-ctable1 <- coef(summary(regression_non_msp))
-p <- pnorm(abs(ctable1[, "t value"]), lower.tail = FALSE) * 2
-ctable1 <- cbind(ctable1, "p value" = p)
-ctable1
-```
+1c. Stunting - MSP + Women's Literacy
 
 ```{r}
-regression_msp_controls = polr(as.factor(stunting_range) ~ MSP+x12_women_who_are_literate_percent, data = merged, Hess=TRUE) 
-summary(regression_msp_controls)
+regression_msp_controls = polr(as.factor(stunting_range) ~ MSP+literacy_women, data = merged, Hess=TRUE) 
+ctable1c <- coef(summary(regression_msp_controls))
+p <- pnorm(abs(ctable1c[, "t value"]), lower.tail = FALSE) * 2
+ctable1c <- cbind(ctable1c, "p value" = p)
+ctable1c
 ```
 
-```{r}
-ctable2 <- coef(summary(regression_msp_controls))
-p <- pnorm(abs(ctable2[, "t value"]), lower.tail = FALSE) * 2
-ctable2 <- cbind(ctable2, "p value" = p)
-ctable2
-```
+1d. Stunting - MSP + Rural Population + Men's Literacy
 
 ```{r}
-regression_msp_controls2 = polr(as.factor(stunting_range) ~ MSP + rural_population_percapita + x13_men_who_are_literate_percent, data = merged, Hess=TRUE) 
-summary(regression_msp_controls2)
+regression_msp_controls2 = polr(as.factor(stunting_range) ~ MSP + rural_population + literacy_men, data = merged, Hess=TRUE) 
+ctable1d <- coef(summary(regression_msp_controls2))
+p <- pnorm(abs(ctable1d[, "t value"]), lower.tail = FALSE) * 2
+ctable1d <- cbind(ctable1d, "p value" = p)
+ctable1d
 ```
 
-```{r}
-ctable3 <- coef(summary(regression_msp_controls2))
-p <- pnorm(abs(ctable3[, "t value"]), lower.tail = FALSE) * 2
-ctable3 <- cbind(ctable3, "p value" = p)
-ctable3
-```
+2a. Underweight - MSP
 
 ```{r}
 regression_msp_uw = polr(as.factor(uw_range) ~ MSP, data = merged, Hess=TRUE) 
-summary(regression_msp_uw)
+ctable2a <- coef(summary(regression_msp_uw))
+p <- pnorm(abs(ctable2a[, "t value"]), lower.tail = FALSE) * 2
+ctable2a <- cbind(ctable2a, "p value" = p)
+ctable2a
 ```
 
+2b. Underweight - Non-MSP
+
 ```{r}
-ctable4 <- coef(summary(regression_msp_uw))
-p <- pnorm(abs(ctable4[, "t value"]), lower.tail = FALSE) * 2
-ctable4 <- cbind(ctable4, "p value" = p)
-ctable4
+regression_nonmsp_uw = polr(as.factor(uw_range) ~ Non_MSP, data = merged, Hess=TRUE) 
+ctable2b <- coef(summary(regression_nonmsp_uw))
+p <- pnorm(abs(ctable2b[, "t value"]), lower.tail = FALSE) * 2
+ctable2b <- cbind(ctable2b, "p value" = p)
+ctable2b
 ```
+
+2c. Underweight - MSP + Women's Literacy
+
+```{r}
+regression_uw_controls = polr(as.factor(uw_range) ~ MSP+literacy_women, data = merged, Hess=TRUE) 
+ctable2c <- coef(summary(regression_uw_controls))
+p <- pnorm(abs(ctable2c[, "t value"]), lower.tail = FALSE) * 2
+ctable2c <- cbind(ctable2c, "p value" = p)
+ctable2c
+```
+
+2d. Underweight - MSP + Rural Population + Men's Literacy
+
+```{r}
+regression_uw_controls2 = polr(as.factor(uw_range) ~ MSP + rural_population + literacy_men, data = merged, Hess=TRUE)
+ctable2d <- coef(summary(regression_uw_controls2))
+p <- pnorm(abs(ctable2d[, "t value"]), lower.tail = FALSE) * 2
+ctable2d <- cbind(ctable2d, "p value" = p)
+ctable2d
+```
+
+3a. Wasting - MSP
 
 ```{r}
 regression_msp_wasting = polr(as.factor(wasting_range) ~ MSP, data = merged, Hess=TRUE) 
-summary(regression_msp_wasting)
+ctable3a <- coef(summary(regression_msp_wasting))
+p <- pnorm(abs(ctable3a[, "t value"]), lower.tail = FALSE) * 2
+ctable3a <- cbind(ctable3a, "p value" = p)
+ctable3a
 ```
 
-```{r}
-ctable5 <- coef(summary(regression_msp_wasting))
-p <- pnorm(abs(ctable5[, "t value"]), lower.tail = FALSE) * 2
-ctable5 <- cbind(ctable5, "p value" = p)
-ctable5
-```
+3b. Wasting - Non-MSP
 
 ```{r}
-regression_non_msp_uw = polr(as.factor(uw_range) ~ Non_MSP, data = merged, Hess=TRUE) 
-summary(regression_non_msp_uw)
+regression_nonmsp_wasting = polr(as.factor(wasting_range) ~ Non_MSP, data = merged, Hess=TRUE) 
+ctable3b <- coef(summary(regression_nonmsp_wasting))
+p <- pnorm(abs(ctable3b[, "t value"]), lower.tail = FALSE) * 2
+ctable3b <- cbind(ctable3b, "p value" = p)
+ctable3b
 ```
 
-```{r}
-ctable6 <- coef(summary(regression_non_msp_uw))
-p <- pnorm(abs(ctable6[, "t value"]), lower.tail = FALSE) * 2
-ctable6 <- cbind(ctable6, "p value" = p)
-ctable6
-```
+3c. Wasting - MSP + Women's Literacy
 
 ```{r}
-regression_non_msp_wasting = polr(as.factor(wasting_range) ~ Non_MSP, data = merged, Hess=TRUE) 
-summary(regression_non_msp_wasting)
+regression_wasting_controls = polr(as.factor(wasting_range) ~ MSP+literacy_women, data = merged, Hess=TRUE) 
+ctable3c <- coef(summary(regression_wasting_controls))
+p <- pnorm(abs(ctable3c[, "t value"]), lower.tail = FALSE) * 2
+ctable3c <- cbind(ctable3c, "p value" = p)
+ctable3c
 ```
 
+3d. Wasting - MSP + Rural Population + Men's Literacy
+
 ```{r}
-ctable7 <- coef(summary(regression_non_msp_wasting))
-p <- pnorm(abs(ctable7[, "t value"]), lower.tail = FALSE) * 2
-ctable7 <- cbind(ctable7, "p value" = p)
-ctable7
+regression_wasting_controls2 = polr(as.factor(wasting_range) ~ MSP + rural_population + literacy_men, data = merged, Hess=TRUE) 
+ctable3d <- coef(summary(regression_wasting_controls2))
+p <- pnorm(abs(ctable3d[, "t value"]), lower.tail = FALSE) * 2
+ctable3d <- cbind(ctable3d, "p value" = p)
+ctable3d
 ```
