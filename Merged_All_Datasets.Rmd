@@ -107,7 +107,7 @@ nfhs2015 <- nfhs2015 %>%
 
 ```{r}
 merged <- merge(agri_all_bydistrict, agri_msp_bydistrict, by.x = "district", by.y = "district")
-merged <- merge(merged, nfhs2015, by.x = "district", by.y = "district")
+merged <- left_join(merged, nfhs2015, by = "district")
 merged <- left_join(districts, merged, by = "district") %>% st_as_sf() 
 #merged <- distinct(merged, District_Name, .keep_all= TRUE)
 ```
@@ -222,6 +222,7 @@ ggsave("04_Visualizations/Non_MSP_map.png")
 ```{r}
 ggplot(data = merged) +
   geom_sf(aes(fill = Rice)) +
+  scale_fill_viridis_c(option = "plasma") +
   xlab("Longitude") +
   ylab("Latitude") +
   labs(
@@ -241,7 +242,8 @@ ggsave("04_Visualizations/Rice_map.png")
 
 ```{r}
 ggplot(data = merged) +
-    geom_sf(aes(fill = Wheat)) +
+  geom_sf(aes(fill = Wheat)) +
+  scale_fill_viridis_c(option = "plasma") +
   xlab("Longitude") +
   ylab("Latitude") +
   labs(
@@ -261,7 +263,8 @@ ggsave("04_Visualizations/Wheat_map.png")
 
 ```{r}
 ggplot(data = merged) +
-    geom_sf(aes(fill = Sugarcane)) +
+  geom_sf(aes(fill = Sugarcane)) +
+  scale_fill_viridis_c(option = "plasma") +
   xlab("Longitude") +
   ylab("Latitude") +
   labs(
@@ -282,12 +285,12 @@ ggsave("04_Visualizations/Sugarcane_map.png")
 Interactive Maps
 
 ```{r}
-gg <- ggplot(data = merged) +
-    geom_sf_interactive(aes(geometry = mid,
-      size = stunting_range, tooltip = district, data_id = district),
-      show.legend = "point")
-  x <- girafe( ggobj = gg)
-  if( interactive() ) print(x)
+#gg <- ggplot(data = merged) +
+    #geom_sf_interactive(aes(geometry = mid,
+      #size = stunting_range, tooltip = district, data_id = district),
+      #show.legend = "point")
+  #x <- girafe( ggobj = gg)
+  #if( interactive() ) print(x)
 ```
 
 Regressions
@@ -335,7 +338,55 @@ summary(regression_msp_controls2)
 
 ```{r}
 ctable3 <- coef(summary(regression_msp_controls2))
-p <- pnorm(abs(ctable2[, "t value"]), lower.tail = FALSE) * 2
+p <- pnorm(abs(ctable3[, "t value"]), lower.tail = FALSE) * 2
 ctable3 <- cbind(ctable3, "p value" = p)
 ctable3
+```
+
+```{r}
+regression_msp_uw = polr(as.factor(uw_range) ~ MSP, data = merged, Hess=TRUE) 
+summary(regression_msp_uw)
+```
+
+```{r}
+ctable4 <- coef(summary(regression_msp_uw))
+p <- pnorm(abs(ctable4[, "t value"]), lower.tail = FALSE) * 2
+ctable4 <- cbind(ctable4, "p value" = p)
+ctable4
+```
+
+```{r}
+regression_msp_wasting = polr(as.factor(wasting_range) ~ MSP, data = merged, Hess=TRUE) 
+summary(regression_msp_wasting)
+```
+
+```{r}
+ctable5 <- coef(summary(regression_msp_wasting))
+p <- pnorm(abs(ctable5[, "t value"]), lower.tail = FALSE) * 2
+ctable5 <- cbind(ctable5, "p value" = p)
+ctable5
+```
+
+```{r}
+regression_non_msp_uw = polr(as.factor(uw_range) ~ Non_MSP, data = merged, Hess=TRUE) 
+summary(regression_non_msp_uw)
+```
+
+```{r}
+ctable6 <- coef(summary(regression_non_msp_uw))
+p <- pnorm(abs(ctable6[, "t value"]), lower.tail = FALSE) * 2
+ctable6 <- cbind(ctable6, "p value" = p)
+ctable6
+```
+
+```{r}
+regression_non_msp_wasting = polr(as.factor(wasting_range) ~ Non_MSP, data = merged, Hess=TRUE) 
+summary(regression_non_msp_wasting)
+```
+
+```{r}
+ctable7 <- coef(summary(regression_non_msp_wasting))
+p <- pnorm(abs(ctable7[, "t value"]), lower.tail = FALSE) * 2
+ctable7 <- cbind(ctable7, "p value" = p)
+ctable7
 ```

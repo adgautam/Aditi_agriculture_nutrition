@@ -161,7 +161,7 @@ ggplot(agri_nococo_sum) +
     y = "Production by Area (tonnes per hectare)",
     caption = "Source: Ministry of Agriculture, India"
   )
-#dev.copy(png,'Visualizations/Aditi_Graph 4.png')
+dev.copy(png,'Visualizations/Aditi_Graph 4.png')
 ```
 
 ```{r}
@@ -197,10 +197,10 @@ ggplot(agri_nococo_nopunj_sum) +
     title = 'Average Production by Area by Year - Without Outliers',
     subtitle = "Non-MSP crops still have a much higher Production",
     x = "Year",
-    y = "Log of Production by Area (tonnes per hectare)",
+    y = "Production by Area (tonnes per hectare)",
     caption = "Source: Ministry of Agriculture, India"
   )
-#dev.copy(png,'Visualizations/Aditi_Graph 3.png')
+dev.copy(png,'Visualizations/Aditi_Graph 3.png')
 ```
 Renaming state and district columns
 ```{r}
@@ -247,7 +247,7 @@ ggplot(filter(agri_corr, !is.na(Production_by_Area))) +
   aes(x = as.character(Crop_Year), y = log(Production_by_Area), color = msp)+
   geom_boxplot() +
   theme_bw()
-#dev.copy(png,'Visualizations/Aditi_Graph 5.png')
+dev.copy(png,'Visualizations/Aditi_Graph 5.png')
 ```
 
 ```{r}
@@ -272,7 +272,7 @@ ggplot(agri_corr_sum) +
     y = "Production by Area (tonnes per hectare)",
     caption = "Source: Ministry of Agriculture, India"
   )
-#dev.copy(png,'Visualizations/Aditi_Graph 6.png')
+dev.copy(png,'Visualizations/Aditi_Graph 6.png')
 ```
 Renaming state and district columns
 ```{r}
