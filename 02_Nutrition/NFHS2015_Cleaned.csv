@@ -1,620 +1,620 @@
-"","state","district","stunting_range_d","uw_range_d","wasting_range_d"
-"1","ANDAMAN AND NICOBAR","NICOBARS","Low","Low","Low"
-"2","ANDAMAN AND NICOBAR","NORTH  & MIDDLE ANDAMAN","Medium","Medium","High"
-"3","ANDAMAN AND NICOBAR","SOUTH ANDAMAN","Low","Low","Medium"
-"4","ANDHRA PRADESH","SRIKAKULAM","Medium","Medium","Medium"
-"5","ANDHRA PRADESH","VIZIANAGARAM","Medium","Medium","Medium"
-"6","ANDHRA PRADESH","VISAKHAPATNAM","Medium","Medium","Medium"
-"7","ANDHRA PRADESH","EAST GODAVARI","Medium","Medium","Medium"
-"8","ANDHRA PRADESH","WEST GODAVARI","Medium","Medium","Low"
-"9","ANDHRA PRADESH","KRISHNA","Low","Medium","Medium"
-"10","ANDHRA PRADESH","GUNTUR","Low","Medium","Medium"
-"11","ANDHRA PRADESH","PRAKASAM","Medium","Medium","Medium"
-"12","ANDHRA PRADESH","SRI POTTI SRIRAMULU NELLORE","Medium","Medium","Medium"
-"13","ANDHRA PRADESH","Y.S.R.","Medium","Medium","Medium"
-"14","ANDHRA PRADESH","KURNOOL","High","Medium","Medium"
-"15","ANDHRA PRADESH","ANANTAPUR","High","Medium","Medium"
-"16","ANDHRA PRADESH","CHITTOOR","Medium","Medium","Medium"
-"17","ARUNACHAL PRADESH","LOWER DIBANG VALLEY","Low","Low","Medium"
-"18","ARUNACHAL PRADESH","LOHIT","Medium","Medium","Medium"
-"19","ARUNACHAL PRADESH","ANJAW","Low","Low","Medium"
-"20","ASSAM","KOKRAJHAR","Medium","Medium","Medium"
-"21","ASSAM","DHUBRI","High","Medium","Medium"
-"22","ASSAM","GOALPARA","High","Medium","Medium"
-"23","ASSAM","BARPETA","High","Medium","Medium"
-"24","ASSAM","MORIGAON","Medium","Medium","Low"
-"25","ASSAM","NAGAON","Medium","Medium","Low"
-"26","ASSAM","SONITPUR","Medium","Medium","Medium"
-"27","ASSAM","LAKHIMPUR","Medium","Medium","Low"
-"28","ASSAM","DHEMAJI","Medium","Low","Low"
-"29","ASSAM","TINSUKIA","Medium","Medium","Low"
-"30","ASSAM","DIBRUGARH","Medium","Medium","Medium"
-"31","ASSAM","SIVASAGAR","Medium","Medium","Low"
-"32","ASSAM","JORHAT","Medium","Low","Low"
-"33","ASSAM","GOLAGHAT","Medium","Medium","Low"
-"34","ASSAM","KARBI ANGLONG","Medium","Medium","Medium"
-"35","ASSAM","DIMA HASAO","Medium","Low","Low"
-"36","ASSAM","CACHAR","Medium","Medium","High"
-"37","ASSAM","KARIMGANJ","High","Medium","Medium"
-"38","ASSAM","HAILAKANDI","Medium","Medium","Medium"
-"39","ASSAM","BONGAIGAON","Medium","Medium","Medium"
-"40","ASSAM","CHIRANG","High","Medium","Low"
-"41","ASSAM","KAMRUP","Medium","Medium","Medium"
-"42","ASSAM","KAMRUP METROPOLITAN","Low","Medium","Low"
-"43","ASSAM","NALBARI","Medium","Low","Medium"
-"44","ASSAM","BAKSA","Medium","Medium","Low"
-"45","ASSAM","DARRANG","High","Medium","Medium"
-"46","ASSAM","UDALGURI","Medium","Medium","Medium"
-"47","BIHAR","PASHCHIM CHAMPARAN","High","Medium","Medium"
-"48","BIHAR","PURBA CHAMPARAN","High","High","Medium"
-"49","BIHAR","SHEOHAR","High","High","Low"
-"50","BIHAR","SITAMARHI","High","High","Medium"
-"51","BIHAR","MADHUBANI","High","High","Medium"
-"52","BIHAR","SUPAUL","High","High","Medium"
-"53","BIHAR","ARARIA","High","High","Medium"
-"54","BIHAR","KISHANGANJ","High","High","Medium"
-"55","BIHAR","PURNIA","High","High","Medium"
-"56","BIHAR","KATIHAR","High","High","Medium"
-"57","BIHAR","MADHEPURA","High","High","Medium"
-"58","BIHAR","SAHARSA","High","High","Medium"
-"59","BIHAR","DARBHANGA","High","High","Medium"
-"60","BIHAR","MUZAFFARPUR","High","High","Medium"
-"61","BIHAR","GOPALGANJ","Medium","Medium","Medium"
-"62","BIHAR","SIWAN","Medium","Medium","Low"
-"63","BIHAR","SARAN","High","High","Medium"
-"64","BIHAR","VAISHALI","High","High","Medium"
-"65","BIHAR","SAMASTIPUR","High","High","Medium"
-"66","BIHAR","BEGUSARAI","High","Medium","Medium"
-"67","BIHAR","KHAGARIA","High","High","Medium"
-"68","BIHAR","BHAGALPUR","High","High","Medium"
-"69","BIHAR","BANKA","High","High","High"
-"70","BIHAR","MUNGER","High","High","Medium"
-"71","BIHAR","LAKHISARAI","High","High","Medium"
-"72","BIHAR","SHEIKHPURA","High","High","High"
-"73","BIHAR","NALANDA","High","High","Medium"
-"74","BIHAR","PATNA","High","High","High"
-"75","BIHAR","BHOJPUR","High","High","High"
-"76","BIHAR","BUXAR","High","High","Medium"
-"77","BIHAR","KAIMUR (BHABUA)","High","High","Medium"
-"78","BIHAR","ROHTAS","High","High","Medium"
-"79","BIHAR","GAYA","High","High","High"
-"80","BIHAR","NAWADA","High","High","Medium"
-"81","BIHAR","JAMUI","High","High","High"
-"82","BIHAR","JEHANABAD","High","High","Medium"
-"83","BIHAR","ARWAL","High","High","High"
-"84","BIHAR","AURANGABAD","High","High","Medium"
-"85","CHHATTISGARH","KOREA","Medium","Medium","High"
-"86","CHHATTISGARH","SURGUJA","Medium","Medium","Medium"
-"87","CHHATTISGARH","JASHPUR","Medium","Medium","Medium"
-"88","CHHATTISGARH","KORBA","Medium","Medium","High"
-"89","CHHATTISGARH","JANJGIR - CHAMPA","Medium","Medium","Medium"
-"90","CHHATTISGARH","BILASPUR","Medium","Medium","High"
-"91","CHHATTISGARH","KABIRDHAM","High","Medium","Medium"
-"92","CHHATTISGARH","RAJNANDGAON","High","Medium","Medium"
-"93","CHHATTISGARH","DURG","Medium","Medium","Medium"
-"94","CHHATTISGARH","RAIPUR","Medium","Medium","Medium"
-"95","CHHATTISGARH","MAHASAMUND","High","Medium","Medium"
-"96","CHHATTISGARH","DHAMTARI","Medium","High","High"
-"97","CHHATTISGARH","UTTAR BASTAR KANKER","Medium","High","High"
-"98","CHHATTISGARH","BASTAR","High","High","High"
-"99","CHHATTISGARH","NARAYANPUR","High","High","High"
-"100","CHHATTISGARH","DAKSHIN BASTAR DANTEWADA","High","High","High"
-"101","CHHATTISGARH","RAIGARH","Medium","Medium","Medium"
-"102","CHHATTISGARH","BIJAPUR","High","High","High"
-"103","DAMAN AND DIU","DIU","Medium","Medium","Medium"
-"104","DAMAN AND DIU","DAMAN","Low","Medium","High"
-"105","DELHI","CENTRAL","Medium","Medium","Medium"
-"106","DELHI","WEST","Medium","Medium","Medium"
-"107","DELHI","SOUTH WEST","Medium","Medium","Low"
-"108","DELHI","SOUTH","Medium","Medium","Medium"
-"109","GOA","NORTH GOA","Low","Medium","Medium"
-"110","GOA","SOUTH GOA","Low","Medium","High"
-"111","GUJARAT","KACHCHH","High","Medium","High"
-"112","GUJARAT","BANASKANTHA","High","High","Medium"
-"113","GUJARAT","PATAN","Medium","Medium","Medium"
-"114","GUJARAT","MAHESANA","High","High","High"
-"115","GUJARAT","SABARKANTHA","High","High","Medium"
-"116","GUJARAT","GANDHINAGAR","Medium","High","High"
-"117","GUJARAT","AHMADABAD","Medium","Medium","High"
-"118","GUJARAT","SURENDRANAGAR","High","High","High"
-"119","GUJARAT","RAJKOT","Medium","Medium","Medium"
-"120","GUJARAT","JAMNAGAR","Medium","Medium","High"
-"121","GUJARAT","PORBANDAR","Low","Medium","High"
-"122","GUJARAT","JUNAGADH","Medium","Medium","High"
-"123","GUJARAT","AMRELI","Medium","Medium","Medium"
-"124","GUJARAT","BHAVNAGAR","High","High","High"
-"125","GUJARAT","ANAND","High","High","Medium"
-"126","GUJARAT","KHEDA","High","High","High"
-"127","GUJARAT","PANCHMAHAL","High","High","High"
-"128","GUJARAT","DOHAD","High","High","Medium"
-"129","GUJARAT","VADODARA","High","Medium","Medium"
-"130","GUJARAT","NARMADA","High","High","High"
-"131","GUJARAT","BHARUCH","High","High","High"
-"132","GUJARAT","THE DANGS","High","High","High"
-"133","GUJARAT","NAVSARI","Medium","Medium","High"
-"134","GUJARAT","VALSAD","High","High","High"
-"135","GUJARAT","SURAT","Medium","Medium","High"
-"136","GUJARAT","TAPI","Medium","High","High"
-"137","HARYANA","PANCHKULA","Low","Medium","High"
-"138","HARYANA","AMBALA","Low","Medium","High"
-"139","HARYANA","YAMUNANAGAR","Medium","Medium","High"
-"140","HARYANA","KURUKSHETRA","Medium","Medium","Medium"
-"141","HARYANA","KAITHAL","Medium","Medium","Medium"
-"142","HARYANA","KARNAL","High","Medium","Medium"
-"143","HARYANA","PANIPAT","High","High","High"
-"144","HARYANA","SONIPAT","High","Medium","Medium"
-"145","HARYANA","JIND","Medium","Medium","High"
-"146","HARYANA","FATEHABAD","Medium","Medium","Medium"
-"147","HARYANA","SIRSA","Medium","Medium","Medium"
-"148","HARYANA","HISAR","Medium","Medium","Medium"
-"149","HARYANA","BHIWANI","Medium","Medium","Medium"
-"150","HARYANA","ROHTAK","Medium","Medium","Low"
-"151","HARYANA","JHAJJAR","Low","Medium","Medium"
-"152","HARYANA","MAHENDRAGARH","Low","Medium","Medium"
-"153","HARYANA","REWARI","Medium","Medium","Medium"
-"154","HARYANA","GURGAON","High","Medium","Medium"
-"155","HARYANA","MEWAT","High","High","Medium"
-"156","HARYANA","FARIDABAD","Medium","Medium","Medium"
-"157","HARYANA","PALWAL","Medium","Medium","Medium"
-"158","HIMACHAL PRADESH","CHAMBA","Medium","Medium","Medium"
-"159","HIMACHAL PRADESH","KANGRA","Medium","Medium","Low"
-"160","HIMACHAL PRADESH","LAHUL &SPITI","Low","Low","Medium"
-"161","HIMACHAL PRADESH","KULLU","Low","Low","Low"
-"162","HIMACHAL PRADESH","MANDI","Medium","Low","Low"
-"163","HIMACHAL PRADESH","UNA","Low","Low","Low"
-"164","HIMACHAL PRADESH","SOLAN","Medium","Medium","Medium"
-"165","HIMACHAL PRADESH","SIRMAUR","Low","Medium","Medium"
-"166","HIMACHAL PRADESH","SHIMLA","Medium","Medium","Medium"
-"167","HIMACHAL PRADESH","KINNAUR","Low","Low","Low"
-"168","HIMACHAL PRADESH","HAMIRPUR","Medium","Low","Low"
-"169","HIMACHAL PRADESH","BILASPUR","Medium","Medium","Low"
-"170","JAMMU & KASHMIR","KUPWARA","Medium","Low","Low"
-"171","JAMMU & KASHMIR","BADGAM","Low","Low","Low"
-"172","JAMMU & KASHMIR","LEH(LADAKH)","Low","Low","Low"
-"173","JAMMU & KASHMIR","KARGIL","Medium","Medium","Low"
-"174","JAMMU & KASHMIR","PUNCH","Medium","Medium","Medium"
-"175","JAMMU & KASHMIR","RAJOURI","Medium","Medium","Low"
-"176","JAMMU & KASHMIR","KATHUA","Medium","Low","Medium"
-"177","JAMMU & KASHMIR","BARAMULA","Medium","Low","Low"
-"178","JAMMU & KASHMIR","BANDIPORE","Low","Low","Low"
-"179","JAMMU & KASHMIR","SRINAGAR","Medium","Medium","Medium"
-"180","JAMMU & KASHMIR","GANDERBAL","Low","Low","Low"
-"181","JAMMU & KASHMIR","PULWAMA","Low","Low","Low"
-"182","JAMMU & KASHMIR","SHUPIYAN","Low","Low","Low"
-"183","JAMMU & KASHMIR","ANANTNAG","Low","Low","Low"
-"184","JAMMU & KASHMIR","KULGAM","Low","Low","Low"
-"185","JAMMU & KASHMIR","DODA","Medium","Low","Low"
-"186","JAMMU & KASHMIR","RAMBAN","Medium","Low","Medium"
-"187","JAMMU & KASHMIR","KISHTWAR","Medium","Low","Medium"
-"188","JAMMU & KASHMIR","UDHAMPUR","High","Medium","Low"
-"189","JAMMU & KASHMIR","REASI","Medium","Medium","Medium"
-"190","JAMMU & KASHMIR","JAMMU","Low","Low","Low"
-"191","JAMMU & KASHMIR","SAMBA","Low","Low","Low"
-"192","JHARKHAND","GARHWA","High","High","High"
-"193","JHARKHAND","CHATRA","High","High","High"
-"194","JHARKHAND","KODARMA","High","High","Medium"
-"195","JHARKHAND","GIRIDIH","High","High","Medium"
-"196","JHARKHAND","DEOGHAR","High","High","Medium"
-"197","JHARKHAND","GODDA","High","High","Medium"
-"198","JHARKHAND","SAHIBGANJ","High","High","Medium"
-"199","JHARKHAND","PAKUR","High","High","Medium"
-"200","JHARKHAND","DHANBAD","Medium","High","High"
-"201","JHARKHAND","BOKARO","Medium","High","High"
-"202","JHARKHAND","LOHARDAGA","High","High","High"
-"203","JHARKHAND","PURBI SINGHBHUM","Medium","High","High"
-"204","JHARKHAND","PALAMU","High","High","Medium"
-"205","JHARKHAND","LATEHAR","High","High","High"
-"206","JHARKHAND","HAZARIBAGH","High","High","Medium"
-"207","JHARKHAND","RAMGARH","Medium","High","High"
-"208","JHARKHAND","DUMKA","High","High","High"
-"209","JHARKHAND","JAMTARA","High","High","High"
-"210","JHARKHAND","RANCHI","High","High","High"
-"211","JHARKHAND","KHUNTI","High","High","High"
-"212","JHARKHAND","GUMLA","High","High","High"
-"213","JHARKHAND","SIMDEGA","Medium","High","High"
-"214","JHARKHAND","PASHCHIMI SINGHBHUM","High","High","High"
-"215","JHARKHAND","SARAIKELA KHARSAWAN","High","High","Medium"
-"216","KARNATAKA","BELGAUM","Medium","Medium","High"
-"217","KARNATAKA","BAGALKOT","High","High","Medium"
-"218","KARNATAKA","BIJAPUR","High","Medium","High"
-"219","KARNATAKA","BIDAR","High","Medium","Medium"
-"220","KARNATAKA","RAICHUR","Medium","High","High"
-"221","KARNATAKA","KOPPAL","High","High","High"
-"222","KARNATAKA","GADAG","Medium","Medium","High"
-"223","KARNATAKA","DHARWAD","Medium","High","High"
-"224","KARNATAKA","UTTARA KANNADA","Medium","Medium","Medium"
-"225","KARNATAKA","HAVERI","High","Medium","Medium"
-"226","KARNATAKA","BELLARY","High","High","High"
-"227","KARNATAKA","CHITRADURGA","Medium","Medium","High"
-"228","KARNATAKA","DAVANAGERE","High","High","Medium"
-"229","KARNATAKA","SHIMOGA","Medium","Medium","Low"
-"230","KARNATAKA","UDUPI","Low","Medium","Medium"
-"231","KARNATAKA","CHIKMAGALUR","Low","Medium","Medium"
-"232","KARNATAKA","TUMKUR","Medium","Medium","High"
-"233","KARNATAKA","BANGALORE","Medium","Medium","High"
-"234","KARNATAKA","MANDYA","Low","Medium","Medium"
-"235","KARNATAKA","HASSAN","Medium","Medium","Medium"
-"236","KARNATAKA","DAKSHINA KANNADA","Low","Medium","Medium"
-"237","KARNATAKA","KODAGU","Medium","Medium","Medium"
-"238","KARNATAKA","MYSORE","Medium","Medium","Medium"
-"239","KARNATAKA","CHAMARAJANAGAR","Medium","Medium","Medium"
-"240","KARNATAKA","GULBARGA","High","High","High"
-"241","KARNATAKA","YADGIR","High","High","High"
-"242","KARNATAKA","KOLAR","Medium","Medium","Medium"
-"243","KARNATAKA","CHIKKABALLAPURA","Medium","Medium","Medium"
-"244","KARNATAKA","BANGALORE RURAL","Medium","Medium","Medium"
-"245","KARNATAKA","RAMANAGARA","Low","Medium","Medium"
-"246","KERALA","KASARAGOD","Low","Low","Low"
-"247","KERALA","KANNUR","Medium","Low","Low"
-"248","KERALA","WAYANAD","Medium","Medium","Medium"
-"249","KERALA","KOZHIKODE","Low","Low","Low"
-"250","KERALA","MALAPPURAM","Medium","Low","Medium"
-"251","KERALA","PALAKKAD","Low","Low","Low"
-"252","KERALA","THRISSUR","Low","Low","Medium"
-"253","KERALA","ERNAKULAM","Low","Low","Medium"
-"254","KERALA","IDUKKI","Low","Low","Medium"
-"255","KERALA","KOTTAYAM","Low","Low","Medium"
-"256","KERALA","ALAPPUZHA","Low","Low","Medium"
-"257","KERALA","PATHANAMTHITTA","Low","Low","Low"
-"258","KERALA","KOLLAM","Low","Low","Medium"
-"259","KERALA","THIRUVANANTHAPURAM","Low","Medium","Low"
-"260","MADHYA PRADESH","SHEOPUR","High","High","High"
-"261","MADHYA PRADESH","MORENA","High","High","High"
-"262","MADHYA PRADESH","BHIND","High","High","High"
-"263","MADHYA PRADESH","GWALIOR","High","High","High"
-"264","MADHYA PRADESH","DATIA","High","High","High"
-"265","MADHYA PRADESH","SHIVPURI","High","High","High"
-"266","MADHYA PRADESH","TIKAMGARH","High","High","Medium"
-"267","MADHYA PRADESH","CHHATARPUR","High","High","Medium"
-"268","MADHYA PRADESH","PANNA","High","High","Medium"
-"269","MADHYA PRADESH","SAGAR","High","Medium","Medium"
-"270","MADHYA PRADESH","DAMOH","High","Medium","Medium"
-"271","MADHYA PRADESH","SATNA","High","Medium","High"
-"272","MADHYA PRADESH","REWA","High","Medium","Medium"
-"273","MADHYA PRADESH","UMARIA","High","High","High"
-"274","MADHYA PRADESH","NEEMUCH","Medium","Medium","Medium"
-"275","MADHYA PRADESH","MANDSAUR","Medium","Medium","Medium"
-"276","MADHYA PRADESH","RATLAM","High","High","Medium"
-"277","MADHYA PRADESH","UJJAIN","Medium","Medium","Medium"
-"278","MADHYA PRADESH","SHAJAPUR","High","High","High"
-"279","MADHYA PRADESH","DEWAS","High","High","High"
-"280","MADHYA PRADESH","DHAR","High","High","High"
-"281","MADHYA PRADESH","INDORE","Medium","Medium","Medium"
-"282","MADHYA PRADESH","KHARGONE (WEST NIMAR)","High","High","Medium"
-"283","MADHYA PRADESH","BARWANI","High","High","High"
-"284","MADHYA PRADESH","RAJGARH","Medium","High","High"
-"285","MADHYA PRADESH","VIDISHA","High","High","Medium"
-"286","MADHYA PRADESH","BHOPAL","High","Medium","Medium"
-"287","MADHYA PRADESH","SEHORE","Medium","Medium","High"
-"288","MADHYA PRADESH","RAISEN","High","High","Medium"
-"289","MADHYA PRADESH","BETUL","Medium","High","High"
-"290","MADHYA PRADESH","HARDA","Medium","High","High"
-"291","MADHYA PRADESH","HOSHANGABAD","Medium","High","High"
-"292","MADHYA PRADESH","KATNI","High","High","Medium"
-"293","MADHYA PRADESH","JABALPUR","Medium","High","High"
-"294","MADHYA PRADESH","NARSIMHAPUR","Medium","Medium","Medium"
-"295","MADHYA PRADESH","DINDORI","High","High","High"
-"296","MADHYA PRADESH","MANDLA","Medium","High","High"
-"297","MADHYA PRADESH","CHHINDWARA","Medium","High","High"
-"298","MADHYA PRADESH","SEONI","Medium","High","High"
-"299","MADHYA PRADESH","BALAGHAT","Medium","High","High"
-"300","MADHYA PRADESH","GUNA","High","High","High"
-"301","MADHYA PRADESH","ASHOKNAGAR","High","High","High"
-"302","MADHYA PRADESH","SHAHDOL","Medium","High","High"
-"303","MADHYA PRADESH","ANUPPUR","Medium","Medium","High"
-"304","MADHYA PRADESH","SIDHI","High","High","Medium"
-"305","MADHYA PRADESH","SINGRAULI","Medium","Medium","High"
-"306","MADHYA PRADESH","JHABUA","High","High","Medium"
-"307","MADHYA PRADESH","ALIRAJPUR","High","High","High"
-"308","MADHYA PRADESH","KHANDWA (EAST NIMAR)","High","High","Medium"
-"309","MADHYA PRADESH","BURHANPUR","High","High","Medium"
-"310","MAHARASHTRA","NANDURBAR","High","High","High"
-"311","MAHARASHTRA","DHULE","Medium","High","High"
-"312","MAHARASHTRA","JALGAON","Medium","Medium","High"
-"313","MAHARASHTRA","BULDANA","High","High","Medium"
-"314","MAHARASHTRA","AKOLA","High","Medium","Medium"
-"315","MAHARASHTRA","WASHIM","High","High","High"
-"316","MAHARASHTRA","AMRAVATI","Medium","Medium","Medium"
-"317","MAHARASHTRA","WARDHA","Medium","Medium","High"
-"318","MAHARASHTRA","NAGPUR","Medium","Medium","High"
-"319","MAHARASHTRA","BHANDARA","High","Medium","Medium"
-"320","MAHARASHTRA","GONDIYA","Medium","High","High"
-"321","MAHARASHTRA","GADCHIROLI","Medium","High","High"
-"322","MAHARASHTRA","CHANDRAPUR","Medium","High","High"
-"323","MAHARASHTRA","YAVATMAL","High","High","High"
-"324","MAHARASHTRA","NANDED","High","Medium","Medium"
-"325","MAHARASHTRA","HINGOLI","Medium","Medium","Medium"
-"326","MAHARASHTRA","PARBHANI","High","High","Medium"
-"327","MAHARASHTRA","JALNA","High","High","Medium"
-"328","MAHARASHTRA","AURANGABAD","Medium","Medium","Medium"
-"329","MAHARASHTRA","NASHIK","High","High","High"
-"330","MAHARASHTRA","THANE","Medium","High","High"
-"331","MAHARASHTRA","MUMBAI SUBURBAN","Low","Medium","Medium"
-"332","MAHARASHTRA","MUMBAI","Medium","Medium","High"
-"333","MAHARASHTRA","RAIGARH","Medium","Medium","High"
-"334","MAHARASHTRA","PUNE","Low","Medium","Medium"
-"335","MAHARASHTRA","AHMADNAGAR","Medium","Medium","Medium"
-"336","MAHARASHTRA","BID","Medium","Medium","High"
-"337","MAHARASHTRA","LATUR","Medium","Medium","Medium"
-"338","MAHARASHTRA","OSMANABAD","High","High","Medium"
-"339","MAHARASHTRA","SOLAPUR","Medium","Medium","Medium"
-"340","MAHARASHTRA","SATARA","Low","Medium","Medium"
-"341","MAHARASHTRA","RATNAGIRI","Medium","Medium","Medium"
-"342","MAHARASHTRA","SINDHUDURG","Medium","Medium","Medium"
-"343","MAHARASHTRA","KOLHAPUR","Medium","Medium","High"
-"344","MAHARASHTRA","SANGLI","Low","Medium","Medium"
-"345","MANIPUR","SENAPATI","Medium","Low","Low"
-"346","MANIPUR","TAMENGLONG","Medium","Low","Low"
-"347","MANIPUR","CHURACHANDPUR","Medium","Low","Low"
-"348","MANIPUR","BISHNUPUR","Low","Low","Low"
-"349","MANIPUR","THOUBAL","Medium","Low","Low"
-"350","MANIPUR","IMPHAL WEST","Low","Low","Low"
-"351","MANIPUR","IMPHAL EAST","Medium","Low","Low"
-"352","MANIPUR","UKHRUL","Medium","Low","Low"
-"353","MANIPUR","CHANDEL","Medium","Low","Low"
-"354","MEGHALAYA","WEST GARO HILLS","Medium","Medium","Medium"
-"355","MEGHALAYA","EAST GARO HILLS","Medium","Low","Low"
-"356","MEGHALAYA","SOUTH GARO HILLS","Low","Medium","High"
-"357","MEGHALAYA","WEST KHASI HILLS","High","Medium","Medium"
-"358","MEGHALAYA","RIBHOI","High","Medium","Low"
-"359","MEGHALAYA","EAST KHASI HILLS","High","Medium","Low"
-"360","MEGHALAYA","JAINTIA HILLS","High","Medium","Medium"
-"361","MIZORAM","MAMIT","Medium","Low","Low"
-"362","MIZORAM","KOLASIB","Medium","Low","Low"
-"363","MIZORAM","AIZWAL","Low","Low","Low"
-"364","MIZORAM","CHAMPHAI","Medium","Low","Low"
-"365","MIZORAM","SERCHHIP","Medium","Low","Low"
-"366","MIZORAM","LUNGLEI","Medium","Low","Low"
-"367","MIZORAM","LAWNGTLAI","Medium","Medium","Low"
-"368","MIZORAM","SAIHA","Medium","Low","Low"
-"369","NAGALAND","MON","Medium","Medium","Medium"
-"370","NAGALAND","MOKOKCHUNG","Low","Low","Low"
-"371","NAGALAND","ZUNHEBOTO","Medium","Low","Low"
-"372","NAGALAND","WOKHA","Low","Low","Low"
-"373","NAGALAND","DIMAPUR","Low","Low","Low"
-"374","NAGALAND","PHEK","Medium","Low","Low"
-"375","NAGALAND","TUENSANG","Medium","Medium","Low"
-"376","NAGALAND","LONGLENG","Medium","Low","Medium"
-"377","NAGALAND","KIPHIRE","High","Medium","Low"
-"378","NAGALAND","KOHIMA","Low","Low","Low"
-"379","NAGALAND","PEREN","Medium","Low","Low"
-"380","ODISHA","BARGARH","Medium","Medium","Medium"
-"381","ODISHA","JHARSUGUDA","Medium","Medium","Medium"
-"382","ODISHA","SAMBALPUR","High","High","High"
-"383","ODISHA","DEBAGARH","Medium","Medium","Medium"
-"384","ODISHA","SUNDARGARH","Medium","High","High"
-"385","ODISHA","KENDUJHAR","High","High","Medium"
-"386","ODISHA","MAYURBHANJ","High","High","Medium"
-"387","ODISHA","BALESHWAR","Medium","Medium","Medium"
-"388","ODISHA","BHADRAK","Medium","Medium","Medium"
-"389","ODISHA","KENDRAPARA","Medium","Medium","Low"
-"390","ODISHA","JAGATSINGHAPUR","Low","Low","Low"
-"391","ODISHA","CUTTACK","Low","Low","Low"
-"392","ODISHA","JAJAPUR","Medium","Medium","Medium"
-"393","ODISHA","DHENKANAL","Medium","Medium","Medium"
-"394","ODISHA","ANUGUL","Medium","Medium","Medium"
-"395","ODISHA","NAYAGARH","Medium","Medium","Medium"
-"396","ODISHA","KHORDHA","Low","Medium","Low"
-"397","ODISHA","PURI","Low","Low","Low"
-"398","ODISHA","GANJAM","Medium","Medium","Medium"
-"399","ODISHA","GAJAPATI","Medium","Medium","Medium"
-"400","ODISHA","KANDHAMAL","Medium","High","Medium"
-"401","ODISHA","BAUDH","High","High","Medium"
-"402","ODISHA","SUBARNAPUR","High","High","Medium"
-"403","ODISHA","BALANGIR","High","High","High"
-"404","ODISHA","NUAPADA","Medium","High","High"
-"405","ODISHA","KALAHANDI","Medium","Medium","Medium"
-"406","ODISHA","RAYAGADA","High","High","Medium"
-"407","ODISHA","NABARANGAPUR","High","High","High"
-"408","ODISHA","KORAPUT","High","High","High"
-"409","ODISHA","MALKANGIRI","High","High","High"
-"410","PUDUCHERRY","YANAM","Medium","Medium","Medium"
-"411","PUDUCHERRY","PUDUCHERRY","Low","Medium","Medium"
-"412","PUDUCHERRY","MAHE","Medium","Low","Low"
-"413","PUDUCHERRY","KARAIKAL","Low","Medium","Medium"
-"414","PUNJAB","GURDASPUR","Low","Medium","Medium"
-"415","PUNJAB","KAPURTHALA","Low","Medium","Medium"
-"416","PUNJAB","JALANDHAR","Medium","Medium","Medium"
-"417","PUNJAB","HOSHIARPUR","Medium","Medium","Medium"
-"418","PUNJAB","SHAHID BHAGAT SINGH NAGAR","Low","Medium","Medium"
-"419","PUNJAB","FATEHGARH SAHIB","Low","Low","Low"
-"420","PUNJAB","LUDHIANA","Medium","Medium","Medium"
-"421","PUNJAB","MOGA","Medium","Medium","Medium"
-"422","PUNJAB","FIROZPUR","Medium","Medium","Medium"
-"423","PUNJAB","MUKTSAR","Medium","Medium","Medium"
-"424","PUNJAB","FARIDKOT","Medium","Medium","Medium"
-"425","PUNJAB","BATHINDA","Low","Low","Low"
-"426","PUNJAB","MANSA","Medium","Medium","Medium"
-"427","PUNJAB","PATIALA","Low","Low","Low"
-"428","PUNJAB","AMRITSAR","Low","Low","Low"
-"429","PUNJAB","TARN TARAN","Low","Low","Low"
-"430","PUNJAB","RUPNAGAR","Low","Medium","Low"
-"431","PUNJAB","SAHIBZADA AJIT SINGH NAGAR","Low","Medium","Low"
-"432","PUNJAB","SANGRUR","Medium","Low","Medium"
-"433","PUNJAB","BARNALA","Low","Low","Low"
-"434","RAJASTHAN","GANGANAGAR","Medium","Medium","Medium"
-"435","RAJASTHAN","HANUMANGARH","Medium","Medium","Medium"
-"436","RAJASTHAN","BIKANER","Medium","Medium","Medium"
-"437","RAJASTHAN","CHURU","Medium","Medium","Medium"
-"438","RAJASTHAN","JHUNJHUNUN","Medium","Low","Low"
-"439","RAJASTHAN","ALWAR","High","Medium","Medium"
-"440","RAJASTHAN","BHARATPUR","High","Medium","Low"
-"441","RAJASTHAN","DHAULPUR","High","Medium","Medium"
-"442","RAJASTHAN","KARAULI","High","Medium","Medium"
-"443","RAJASTHAN","SAWAI MADHOPUR","Medium","Medium","Medium"
-"444","RAJASTHAN","DAUSA","Medium","Medium","Medium"
-"445","RAJASTHAN","JAIPUR","Medium","Medium","Low"
-"446","RAJASTHAN","SIKAR","Medium","Medium","Low"
-"447","RAJASTHAN","NAGAUR","Medium","Medium","Medium"
-"448","RAJASTHAN","JODHPUR","High","Medium","Medium"
-"449","RAJASTHAN","JAISALMER","Medium","Medium","Medium"
-"450","RAJASTHAN","BARMER","Medium","Medium","High"
-"451","RAJASTHAN","JALOR","High","High","High"
-"452","RAJASTHAN","SIROHI","High","High","High"
-"453","RAJASTHAN","PALI","High","High","Medium"
-"454","RAJASTHAN","AJMER","Medium","Medium","High"
-"455","RAJASTHAN","TONK","Medium","Medium","Medium"
-"456","RAJASTHAN","BUNDI","Medium","High","High"
-"457","RAJASTHAN","BHILWARA","Medium","High","High"
-"458","RAJASTHAN","RAJSAMAND","Medium","Medium","High"
-"459","RAJASTHAN","DUNGARPUR","High","High","High"
-"460","RAJASTHAN","BANSWARA","High","High","High"
-"461","RAJASTHAN","CHITTAURGARH","Medium","High","Medium"
-"462","RAJASTHAN","KOTA","Medium","Medium","High"
-"463","RAJASTHAN","BARAN","High","High","High"
-"464","RAJASTHAN","JHALAWAR","Medium","High","High"
-"465","RAJASTHAN","UDAIPUR","High","High","High"
-"466","RAJASTHAN","PRATAPGARH","High","High","High"
-"467","SIKKIM","NORTH DISTRICT","Low","Low","Medium"
-"468","SIKKIM","WEST DISTRICT","High","Low","Low"
-"469","SIKKIM","SOUTH DISTRICT","Medium","Medium","Medium"
-"470","SIKKIM","EAST DISTRICT","Low","Low","Low"
-"471","TAMIL NADU","THIRUVALLUR","Medium","Medium","Medium"
-"472","TAMIL NADU","CHENNAI","Medium","Low","Medium"
-"473","TAMIL NADU","KANCHEEPURAM","Low","Low","Low"
-"474","TAMIL NADU","VELLORE","Medium","Medium","High"
-"475","TAMIL NADU","TIRUVANNAMALAI","Low","Medium","High"
-"476","TAMIL NADU","VILUPPURAM","Medium","Medium","Medium"
-"477","TAMIL NADU","SALEM","Medium","Medium","Medium"
-"478","TAMIL NADU","NAMAKKAL","Medium","Low","Low"
-"479","TAMIL NADU","ERODE","Medium","Low","Medium"
-"480","TAMIL NADU","THE NILGIRIS","Medium","Medium","High"
-"481","TAMIL NADU","DINDIGUL","Medium","Medium","High"
-"482","TAMIL NADU","KARUR","Medium","Medium","Medium"
-"483","TAMIL NADU","TIRUCHIRAPPALLI","Medium","Medium","Medium"
-"484","TAMIL NADU","PERAMBALUR","Low","Medium","Medium"
-"485","TAMIL NADU","ARIYALUR","Medium","Medium","Medium"
-"486","TAMIL NADU","CUDDALORE","Medium","Medium","Medium"
-"487","TAMIL NADU","NAGAPATTINAM","Low","Medium","Medium"
-"488","TAMIL NADU","THIRUVARUR","Medium","Medium","Medium"
-"489","TAMIL NADU","THANJAVUR","Medium","Medium","Medium"
-"490","TAMIL NADU","PUDUKKOTTAI","Medium","Medium","Medium"
-"491","TAMIL NADU","SIVAGANGA","Low","Medium","Medium"
-"492","TAMIL NADU","MADURAI","Low","Low","Low"
-"493","TAMIL NADU","THENI","Medium","Medium","Low"
-"494","TAMIL NADU","VIRUDHUNAGAR","Medium","Medium","Medium"
-"495","TAMIL NADU","RAMANATHAPURAM","Low","Medium","Medium"
-"496","TAMIL NADU","THOOTHUKKUDI","Low","Low","Low"
-"497","TAMIL NADU","TIRUNELVELI","Medium","Medium","Low"
-"498","TAMIL NADU","KANNIYAKUMARI","Low","Low","Low"
-"499","TAMIL NADU","DHARMAPURI","Low","Medium","High"
-"500","TAMIL NADU","KRISHNAGIRI","Medium","Medium","Medium"
-"501","TAMIL NADU","COIMBATORE","Medium","Medium","Medium"
-"502","TAMIL NADU","TIRUPPUR","Medium","Medium","Medium"
-"503","TELANGANA","ADILABAD","Medium","Medium","Medium"
-"504","TELANGANA","NIZAMABAD","Medium","Medium","Medium"
-"505","TELANGANA","KARIMNAGAR","Low","Medium","Medium"
-"506","TELANGANA","MEDAK","Medium","Medium","Medium"
-"507","TELANGANA","HYDERABAD","Low","Low","Low"
-"508","TELANGANA","RANGAREDDY","Medium","Medium","Low"
-"509","TELANGANA","MAHBUBNAGAR","Medium","Medium","Medium"
-"510","TELANGANA","NALGONDA","Medium","Medium","Medium"
-"511","TELANGANA","WARANGAL","Medium","Medium","Medium"
-"512","TELANGANA","KHAMMAM","Medium","Medium","Low"
-"513","TRIPURA","WEST TRIPURA","Low","Low","Low"
-"514","TRIPURA","SOUTH TRIPURA","Low","Medium","Medium"
-"515","TRIPURA","DHALAI","Medium","Medium","Medium"
-"516","TRIPURA","NORTH TRIPURA","Medium","Medium","Low"
-"517","UTTAR PRADESH","SAHARANPUR","Medium","Medium","Medium"
-"518","UTTAR PRADESH","MUZAFFARNAGAR","High","Medium","Medium"
-"519","UTTAR PRADESH","BIJNOR","High","High","Medium"
-"520","UTTAR PRADESH","MORADABAD","High","High","Medium"
-"521","UTTAR PRADESH","RAMPUR","High","High","Medium"
-"522","UTTAR PRADESH","JYOTIBA PHULE NAGAR","High","High","Medium"
-"523","UTTAR PRADESH","MEERUT","Medium","Medium","Medium"
-"524","UTTAR PRADESH","BAGHPAT","Medium","Medium","Low"
-"525","UTTAR PRADESH","GHAZIABAD","Medium","Medium","Low"
-"526","UTTAR PRADESH","GAUTUM BUDDHA NAGAR","Medium","Medium","Medium"
-"527","UTTAR PRADESH","BULANDSHAHR","High","Medium","Medium"
-"528","UTTAR PRADESH","ALIGARH","High","Medium","Low"
-"529","UTTAR PRADESH","MAHAMAYA NAGAR","High","Medium","Low"
-"530","UTTAR PRADESH","MATHURA","High","Medium","Low"
-"531","UTTAR PRADESH","AGRA","High","Medium","Low"
-"532","UTTAR PRADESH","FIROZABAD","High","Medium","Low"
-"533","UTTAR PRADESH","MAINPURI","High","Medium","Low"
-"534","UTTAR PRADESH","BUDAUN","High","High","Medium"
-"535","UTTAR PRADESH","BAREILLY","High","High","Medium"
-"536","UTTAR PRADESH","PILIBHIT","High","High","Medium"
-"537","UTTAR PRADESH","SHAHJAHANPUR","High","High","Medium"
-"538","UTTAR PRADESH","KHERI","High","High","Medium"
-"539","UTTAR PRADESH","SITAPUR","High","High","Low"
-"540","UTTAR PRADESH","HARDOI","High","Medium","Low"
-"541","UTTAR PRADESH","UNNAO","High","Medium","Low"
-"542","UTTAR PRADESH","LUCKNOW","Medium","High","High"
-"543","UTTAR PRADESH","RAE BARELI","Medium","High","High"
-"544","UTTAR PRADESH","FARRUKHABAD","High","Medium","Low"
-"545","UTTAR PRADESH","KANNAUJ","High","Medium","Low"
-"546","UTTAR PRADESH","ETAWAH","High","Medium","Low"
-"547","UTTAR PRADESH","AURAIYA","High","High","High"
-"548","UTTAR PRADESH","KANPUR DEHAT","High","Medium","Medium"
-"549","UTTAR PRADESH","KANPUR NAGAR","High","High","Medium"
-"550","UTTAR PRADESH","JALAUN","High","High","High"
-"551","UTTAR PRADESH","JHANSI","Medium","Medium","High"
-"552","UTTAR PRADESH","LALITPUR","High","High","High"
-"553","UTTAR PRADESH","HAMIRPUR","Medium","Medium","High"
-"554","UTTAR PRADESH","MAHOBA","High","High","Medium"
-"555","UTTAR PRADESH","BANDA","High","High","Medium"
-"556","UTTAR PRADESH","CHITRAKOOT","High","High","High"
-"557","UTTAR PRADESH","FATEHPUR","High","High","Low"
-"558","UTTAR PRADESH","PRATAPGARH","High","High","Medium"
-"559","UTTAR PRADESH","KAUSHAMBI","High","High","High"
-"560","UTTAR PRADESH","ALLAHABAD","High","High","Medium"
-"561","UTTAR PRADESH","BARA BANKI","High","High","Low"
-"562","UTTAR PRADESH","FAIZABAD","High","High","Medium"
-"563","UTTAR PRADESH","AMBEDKAR NAGAR","High","High","Medium"
-"564","UTTAR PRADESH","SULTANPUR","High","Medium","Medium"
-"565","UTTAR PRADESH","BAHRAICH","High","High","Low"
-"566","UTTAR PRADESH","SHRAWASTI","High","Medium","Low"
-"567","UTTAR PRADESH","BALRAMPUR","High","High","Low"
-"568","UTTAR PRADESH","GONDA","High","Medium","Low"
-"569","UTTAR PRADESH","SIDDHARTHNAGAR","High","High","Low"
-"570","UTTAR PRADESH","BASTI","High","Medium","Low"
-"571","UTTAR PRADESH","SANT KABIR NAGAR","High","Medium","Low"
-"572","UTTAR PRADESH","MAHRAJGANJ","High","Medium","Low"
-"573","UTTAR PRADESH","GORAKHPUR","High","Medium","Medium"
-"574","UTTAR PRADESH","KUSHINAGAR","High","Medium","Low"
-"575","UTTAR PRADESH","DEORIA","High","Medium","Low"
-"576","UTTAR PRADESH","AZAMGARH","Medium","Medium","Medium"
-"577","UTTAR PRADESH","MAU","High","Medium","Medium"
-"578","UTTAR PRADESH","BALLIA","Medium","Medium","Low"
-"579","UTTAR PRADESH","JAUNPUR","High","High","High"
-"580","UTTAR PRADESH","GHAZIPUR","High","Medium","Medium"
-"581","UTTAR PRADESH","CHANDAULI","High","Medium","Medium"
-"582","UTTAR PRADESH","VARANASI","High","High","High"
-"583","UTTAR PRADESH","SANT RAVIDAS NAGAR","High","High","Medium"
-"584","UTTAR PRADESH","MIRZAPUR","High","High","Medium"
-"585","UTTAR PRADESH","SONBHADRA","High","High","Medium"
-"586","UTTAR PRADESH","ETAH","High","Medium","Low"
-"587","UTTAR PRADESH","KANSHIRAM NAGAR","High","Medium","Low"
-"588","UTTARAKHAND","UTTARKASHI","Medium","High","High"
-"589","UTTARAKHAND","CHAMOLI","Medium","Medium","Medium"
-"590","UTTARAKHAND","RUDRAPRAYAG","Medium","Medium","Medium"
-"591","UTTARAKHAND","TEHRI GARHWAL","Medium","High","High"
-"592","UTTARAKHAND","DEHRADUN","Medium","Medium","High"
-"593","UTTARAKHAND","GARHWAL","Low","Medium","High"
-"594","UTTARAKHAND","PITHORAGARH","Medium","Low","Medium"
-"595","UTTARAKHAND","BAGESHWAR","Medium","Medium","High"
-"596","UTTARAKHAND","ALMORA","Medium","Medium","Low"
-"597","UTTARAKHAND","CHAMPAWAT","Medium","Medium","Medium"
-"598","UTTARAKHAND","NAINITAL","Medium","Low","Low"
-"599","UTTARAKHAND","UDHAM SINGH NAGAR","Medium","Medium","Low"
-"600","UTTARAKHAND","HARDWAR","Medium","Medium","Low"
-"601","WEST BENGAL","DARJILING","Medium","Medium","Low"
-"602","WEST BENGAL","JALPAIGURI","Medium","Medium","Medium"
-"603","WEST BENGAL","KOCH BIHAR","Medium","Medium","Medium"
-"604","WEST BENGAL","UTTAR DINAJPUR","High","Medium","Low"
-"605","WEST BENGAL","DAKSHIN DINAJPUR","Medium","Medium","Medium"
-"606","WEST BENGAL","MALDAH","Medium","Medium","Medium"
-"607","WEST BENGAL","MURSHIDABAD","High","Medium","Medium"
-"608","WEST BENGAL","BIRBHUM","High","High","High"
-"609","WEST BENGAL","BARDDHAMAN","Medium","Medium","High"
-"610","WEST BENGAL","NADIA","Low","Low","Low"
-"611","WEST BENGAL","NORTH TWENTY FOUR PARGANAS","Low","Low","Low"
-"612","WEST BENGAL","HUGLI","Medium","Medium","Medium"
-"613","WEST BENGAL","BANKURA","Medium","Medium","High"
-"614","WEST BENGAL","PURULIYA","High","High","High"
-"615","WEST BENGAL","HAORA","Medium","Medium","Low"
-"616","WEST BENGAL","KOLKATA","Low","Low","Medium"
-"617","WEST BENGAL","SOUTH TWENTY FOUR PARGANAS","Medium","Medium","Medium"
-"618","WEST BENGAL","PASCHIM MEDINIPUR","Medium","High","High"
-"619","WEST BENGAL","PURBA MEDINIPUR","Medium","Medium","Medium"
+"","state","district","stunting_range","uw_range","wasting_range"
+"1","ANDAMAN AND NICOBAR","NICOBARS",0,0,0
+"2","ANDAMAN AND NICOBAR","NORTH  & MIDDLE ANDAMAN",0.5,0.5,1
+"3","ANDAMAN AND NICOBAR","SOUTH ANDAMAN",0,0,0.5
+"4","ANDHRA PRADESH","SRIKAKULAM",0.5,0.5,0.5
+"5","ANDHRA PRADESH","VIZIANAGARAM",0.5,0.5,0.5
+"6","ANDHRA PRADESH","VISAKHAPATNAM",0.5,0.5,0.5
+"7","ANDHRA PRADESH","EAST GODAVARI",0.5,0.5,0.5
+"8","ANDHRA PRADESH","WEST GODAVARI",0.5,0.5,0
+"9","ANDHRA PRADESH","KRISHNA",0,0.5,0.5
+"10","ANDHRA PRADESH","GUNTUR",0,0.5,0.5
+"11","ANDHRA PRADESH","PRAKASAM",0.5,0.5,0.5
+"12","ANDHRA PRADESH","SRI POTTI SRIRAMULU NELLORE",0.5,0.5,0.5
+"13","ANDHRA PRADESH","Y.S.R.",0.5,0.5,0.5
+"14","ANDHRA PRADESH","KURNOOL",1,0.5,0.5
+"15","ANDHRA PRADESH","ANANTAPUR",1,0.5,0.5
+"16","ANDHRA PRADESH","CHITTOOR",0.5,0.5,0.5
+"17","ARUNACHAL PRADESH","LOWER DIBANG VALLEY",0,0,0.5
+"18","ARUNACHAL PRADESH","LOHIT",0.5,0.5,0.5
+"19","ARUNACHAL PRADESH","ANJAW",0,0,0.5
+"20","ASSAM","KOKRAJHAR",0.5,0.5,0.5
+"21","ASSAM","DHUBRI",1,0.5,0.5
+"22","ASSAM","GOALPARA",1,0.5,0.5
+"23","ASSAM","BARPETA",1,0.5,0.5
+"24","ASSAM","MORIGAON",0.5,0.5,0
+"25","ASSAM","NAGAON",0.5,0.5,0
+"26","ASSAM","SONITPUR",0.5,0.5,0.5
+"27","ASSAM","LAKHIMPUR",0.5,0.5,0
+"28","ASSAM","DHEMAJI",0.5,0,0
+"29","ASSAM","TINSUKIA",0.5,0.5,0
+"30","ASSAM","DIBRUGARH",0.5,0.5,0.5
+"31","ASSAM","SIVASAGAR",0.5,0.5,0
+"32","ASSAM","JORHAT",0.5,0,0
+"33","ASSAM","GOLAGHAT",0.5,0.5,0
+"34","ASSAM","KARBI ANGLONG",0.5,0.5,0.5
+"35","ASSAM","DIMA HASAO",0.5,0,0
+"36","ASSAM","CACHAR",0.5,0.5,1
+"37","ASSAM","KARIMGANJ",1,0.5,0.5
+"38","ASSAM","HAILAKANDI",0.5,0.5,0.5
+"39","ASSAM","BONGAIGAON",0.5,0.5,0.5
+"40","ASSAM","CHIRANG",1,0.5,0
+"41","ASSAM","KAMRUP",0.5,0.5,0.5
+"42","ASSAM","KAMRUP METROPOLITAN",0,0.5,0
+"43","ASSAM","NALBARI",0.5,0,0.5
+"44","ASSAM","BAKSA",0.5,0.5,0
+"45","ASSAM","DARRANG",1,0.5,0.5
+"46","ASSAM","UDALGURI",0.5,0.5,0.5
+"47","BIHAR","PASHCHIM CHAMPARAN",1,0.5,0.5
+"48","BIHAR","PURBA CHAMPARAN",1,1,0.5
+"49","BIHAR","SHEOHAR",1,1,0
+"50","BIHAR","SITAMARHI",1,1,0.5
+"51","BIHAR","MADHUBANI",1,1,0.5
+"52","BIHAR","SUPAUL",1,1,0.5
+"53","BIHAR","ARARIA",1,1,0.5
+"54","BIHAR","KISHANGANJ",1,1,0.5
+"55","BIHAR","PURNIA",1,1,0.5
+"56","BIHAR","KATIHAR",1,1,0.5
+"57","BIHAR","MADHEPURA",1,1,0.5
+"58","BIHAR","SAHARSA",1,1,0.5
+"59","BIHAR","DARBHANGA",1,1,0.5
+"60","BIHAR","MUZAFFARPUR",1,1,0.5
+"61","BIHAR","GOPALGANJ",0.5,0.5,0.5
+"62","BIHAR","SIWAN",0.5,0.5,0
+"63","BIHAR","SARAN",1,1,0.5
+"64","BIHAR","VAISHALI",1,1,0.5
+"65","BIHAR","SAMASTIPUR",1,1,0.5
+"66","BIHAR","BEGUSARAI",1,0.5,0.5
+"67","BIHAR","KHAGARIA",1,1,0.5
+"68","BIHAR","BHAGALPUR",1,1,0.5
+"69","BIHAR","BANKA",1,1,1
+"70","BIHAR","MUNGER",1,1,0.5
+"71","BIHAR","LAKHISARAI",1,1,0.5
+"72","BIHAR","SHEIKHPURA",1,1,1
+"73","BIHAR","NALANDA",1,1,0.5
+"74","BIHAR","PATNA",1,1,1
+"75","BIHAR","BHOJPUR",1,1,1
+"76","BIHAR","BUXAR",1,1,0.5
+"77","BIHAR","KAIMUR (BHABUA)",1,1,0.5
+"78","BIHAR","ROHTAS",1,1,0.5
+"79","BIHAR","GAYA",1,1,1
+"80","BIHAR","NAWADA",1,1,0.5
+"81","BIHAR","JAMUI",1,1,1
+"82","BIHAR","JEHANABAD",1,1,0.5
+"83","BIHAR","ARWAL",1,1,1
+"84","BIHAR","AURANGABAD",1,1,0.5
+"85","CHHATTISGARH","KOREA",0.5,0.5,1
+"86","CHHATTISGARH","SURGUJA",0.5,0.5,0.5
+"87","CHHATTISGARH","JASHPUR",0.5,0.5,0.5
+"88","CHHATTISGARH","KORBA",0.5,0.5,1
+"89","CHHATTISGARH","JANJGIR - CHAMPA",0.5,0.5,0.5
+"90","CHHATTISGARH","BILASPUR",0.5,0.5,1
+"91","CHHATTISGARH","KABIRDHAM",1,0.5,0.5
+"92","CHHATTISGARH","RAJNANDGAON",1,0.5,0.5
+"93","CHHATTISGARH","DURG",0.5,0.5,0.5
+"94","CHHATTISGARH","RAIPUR",0.5,0.5,0.5
+"95","CHHATTISGARH","MAHASAMUND",1,0.5,0.5
+"96","CHHATTISGARH","DHAMTARI",0.5,1,1
+"97","CHHATTISGARH","UTTAR BASTAR KANKER",0.5,1,1
+"98","CHHATTISGARH","BASTAR",1,1,1
+"99","CHHATTISGARH","NARAYANPUR",1,1,1
+"100","CHHATTISGARH","DAKSHIN BASTAR DANTEWADA",1,1,1
+"101","CHHATTISGARH","RAIGARH",0.5,0.5,0.5
+"102","CHHATTISGARH","BIJAPUR",1,1,1
+"103","DAMAN AND DIU","DIU",0.5,0.5,0.5
+"104","DAMAN AND DIU","DAMAN",0,0.5,1
+"105","DELHI","CENTRAL",0.5,0.5,0.5
+"106","DELHI","WEST",0.5,0.5,0.5
+"107","DELHI","SOUTH WEST",0.5,0.5,0
+"108","DELHI","SOUTH",0.5,0.5,0.5
+"109","GOA","NORTH GOA",0,0.5,0.5
+"110","GOA","SOUTH GOA",0,0.5,1
+"111","GUJARAT","KACHCHH",1,0.5,1
+"112","GUJARAT","BANASKANTHA",1,1,0.5
+"113","GUJARAT","PATAN",0.5,0.5,0.5
+"114","GUJARAT","MAHESANA",1,1,1
+"115","GUJARAT","SABARKANTHA",1,1,0.5
+"116","GUJARAT","GANDHINAGAR",0.5,1,1
+"117","GUJARAT","AHMADABAD",0.5,0.5,1
+"118","GUJARAT","SURENDRANAGAR",1,1,1
+"119","GUJARAT","RAJKOT",0.5,0.5,0.5
+"120","GUJARAT","JAMNAGAR",0.5,0.5,1
+"121","GUJARAT","PORBANDAR",0,0.5,1
+"122","GUJARAT","JUNAGADH",0.5,0.5,1
+"123","GUJARAT","AMRELI",0.5,0.5,0.5
+"124","GUJARAT","BHAVNAGAR",1,1,1
+"125","GUJARAT","ANAND",1,1,0.5
+"126","GUJARAT","KHEDA",1,1,1
+"127","GUJARAT","PANCHMAHAL",1,1,1
+"128","GUJARAT","DOHAD",1,1,0.5
+"129","GUJARAT","VADODARA",1,0.5,0.5
+"130","GUJARAT","NARMADA",1,1,1
+"131","GUJARAT","BHARUCH",1,1,1
+"132","GUJARAT","THE DANGS",1,1,1
+"133","GUJARAT","NAVSARI",0.5,0.5,1
+"134","GUJARAT","VALSAD",1,1,1
+"135","GUJARAT","SURAT",0.5,0.5,1
+"136","GUJARAT","TAPI",0.5,1,1
+"137","HARYANA","PANCHKULA",0,0.5,1
+"138","HARYANA","AMBALA",0,0.5,1
+"139","HARYANA","YAMUNANAGAR",0.5,0.5,1
+"140","HARYANA","KURUKSHETRA",0.5,0.5,0.5
+"141","HARYANA","KAITHAL",0.5,0.5,0.5
+"142","HARYANA","KARNAL",1,0.5,0.5
+"143","HARYANA","PANIPAT",1,1,1
+"144","HARYANA","SONIPAT",1,0.5,0.5
+"145","HARYANA","JIND",0.5,0.5,1
+"146","HARYANA","FATEHABAD",0.5,0.5,0.5
+"147","HARYANA","SIRSA",0.5,0.5,0.5
+"148","HARYANA","HISAR",0.5,0.5,0.5
+"149","HARYANA","BHIWANI",0.5,0.5,0.5
+"150","HARYANA","ROHTAK",0.5,0.5,0
+"151","HARYANA","JHAJJAR",0,0.5,0.5
+"152","HARYANA","MAHENDRAGARH",0,0.5,0.5
+"153","HARYANA","REWARI",0.5,0.5,0.5
+"154","HARYANA","GURGAON",1,0.5,0.5
+"155","HARYANA","MEWAT",1,1,0.5
+"156","HARYANA","FARIDABAD",0.5,0.5,0.5
+"157","HARYANA","PALWAL",0.5,0.5,0.5
+"158","HIMACHAL PRADESH","CHAMBA",0.5,0.5,0.5
+"159","HIMACHAL PRADESH","KANGRA",0.5,0.5,0
+"160","HIMACHAL PRADESH","LAHUL &SPITI",0,0,0.5
+"161","HIMACHAL PRADESH","KULLU",0,0,0
+"162","HIMACHAL PRADESH","MANDI",0.5,0,0
+"163","HIMACHAL PRADESH","UNA",0,0,0
+"164","HIMACHAL PRADESH","SOLAN",0.5,0.5,0.5
+"165","HIMACHAL PRADESH","SIRMAUR",0,0.5,0.5
+"166","HIMACHAL PRADESH","SHIMLA",0.5,0.5,0.5
+"167","HIMACHAL PRADESH","KINNAUR",0,0,0
+"168","HIMACHAL PRADESH","HAMIRPUR",0.5,0,0
+"169","HIMACHAL PRADESH","BILASPUR",0.5,0.5,0
+"170","JAMMU & KASHMIR","KUPWARA",0.5,0,0
+"171","JAMMU & KASHMIR","BADGAM",0,0,0
+"172","JAMMU & KASHMIR","LEH(LADAKH)",0,0,0
+"173","JAMMU & KASHMIR","KARGIL",0.5,0.5,0
+"174","JAMMU & KASHMIR","PUNCH",0.5,0.5,0.5
+"175","JAMMU & KASHMIR","RAJOURI",0.5,0.5,0
+"176","JAMMU & KASHMIR","KATHUA",0.5,0,0.5
+"177","JAMMU & KASHMIR","BARAMULA",0.5,0,0
+"178","JAMMU & KASHMIR","BANDIPORE",0,0,0
+"179","JAMMU & KASHMIR","SRINAGAR",0.5,0.5,0.5
+"180","JAMMU & KASHMIR","GANDERBAL",0,0,0
+"181","JAMMU & KASHMIR","PULWAMA",0,0,0
+"182","JAMMU & KASHMIR","SHUPIYAN",0,0,0
+"183","JAMMU & KASHMIR","ANANTNAG",0,0,0
+"184","JAMMU & KASHMIR","KULGAM",0,0,0
+"185","JAMMU & KASHMIR","DODA",0.5,0,0
+"186","JAMMU & KASHMIR","RAMBAN",0.5,0,0.5
+"187","JAMMU & KASHMIR","KISHTWAR",0.5,0,0.5
+"188","JAMMU & KASHMIR","UDHAMPUR",1,0.5,0
+"189","JAMMU & KASHMIR","REASI",0.5,0.5,0.5
+"190","JAMMU & KASHMIR","JAMMU",0,0,0
+"191","JAMMU & KASHMIR","SAMBA",0,0,0
+"192","JHARKHAND","GARHWA",1,1,1
+"193","JHARKHAND","CHATRA",1,1,1
+"194","JHARKHAND","KODARMA",1,1,0.5
+"195","JHARKHAND","GIRIDIH",1,1,0.5
+"196","JHARKHAND","DEOGHAR",1,1,0.5
+"197","JHARKHAND","GODDA",1,1,0.5
+"198","JHARKHAND","SAHIBGANJ",1,1,0.5
+"199","JHARKHAND","PAKUR",1,1,0.5
+"200","JHARKHAND","DHANBAD",0.5,1,1
+"201","JHARKHAND","BOKARO",0.5,1,1
+"202","JHARKHAND","LOHARDAGA",1,1,1
+"203","JHARKHAND","PURBI SINGHBHUM",0.5,1,1
+"204","JHARKHAND","PALAMU",1,1,0.5
+"205","JHARKHAND","LATEHAR",1,1,1
+"206","JHARKHAND","HAZARIBAGH",1,1,0.5
+"207","JHARKHAND","RAMGARH",0.5,1,1
+"208","JHARKHAND","DUMKA",1,1,1
+"209","JHARKHAND","JAMTARA",1,1,1
+"210","JHARKHAND","RANCHI",1,1,1
+"211","JHARKHAND","KHUNTI",1,1,1
+"212","JHARKHAND","GUMLA",1,1,1
+"213","JHARKHAND","SIMDEGA",0.5,1,1
+"214","JHARKHAND","PASHCHIMI SINGHBHUM",1,1,1
+"215","JHARKHAND","SARAIKELA KHARSAWAN",1,1,0.5
+"216","KARNATAKA","BELGAUM",0.5,0.5,1
+"217","KARNATAKA","BAGALKOT",1,1,0.5
+"218","KARNATAKA","BIJAPUR",1,0.5,1
+"219","KARNATAKA","BIDAR",1,0.5,0.5
+"220","KARNATAKA","RAICHUR",0.5,1,1
+"221","KARNATAKA","KOPPAL",1,1,1
+"222","KARNATAKA","GADAG",0.5,0.5,1
+"223","KARNATAKA","DHARWAD",0.5,1,1
+"224","KARNATAKA","UTTARA KANNADA",0.5,0.5,0.5
+"225","KARNATAKA","HAVERI",1,0.5,0.5
+"226","KARNATAKA","BELLARY",1,1,1
+"227","KARNATAKA","CHITRADURGA",0.5,0.5,1
+"228","KARNATAKA","DAVANAGERE",1,1,0.5
+"229","KARNATAKA","SHIMOGA",0.5,0.5,0
+"230","KARNATAKA","UDUPI",0,0.5,0.5
+"231","KARNATAKA","CHIKMAGALUR",0,0.5,0.5
+"232","KARNATAKA","TUMKUR",0.5,0.5,1
+"233","KARNATAKA","BANGALORE",0.5,0.5,1
+"234","KARNATAKA","MANDYA",0,0.5,0.5
+"235","KARNATAKA","HASSAN",0.5,0.5,0.5
+"236","KARNATAKA","DAKSHINA KANNADA",0,0.5,0.5
+"237","KARNATAKA","KODAGU",0.5,0.5,0.5
+"238","KARNATAKA","MYSORE",0.5,0.5,0.5
+"239","KARNATAKA","CHAMARAJANAGAR",0.5,0.5,0.5
+"240","KARNATAKA","GULBARGA",1,1,1
+"241","KARNATAKA","YADGIR",1,1,1
+"242","KARNATAKA","KOLAR",0.5,0.5,0.5
+"243","KARNATAKA","CHIKKABALLAPURA",0.5,0.5,0.5
+"244","KARNATAKA","BANGALORE RURAL",0.5,0.5,0.5
+"245","KARNATAKA","RAMANAGARA",0,0.5,0.5
+"246","KERALA","KASARAGOD",0,0,0
+"247","KERALA","KANNUR",0.5,0,0
+"248","KERALA","WAYANAD",0.5,0.5,0.5
+"249","KERALA","KOZHIKODE",0,0,0
+"250","KERALA","MALAPPURAM",0.5,0,0.5
+"251","KERALA","PALAKKAD",0,0,0
+"252","KERALA","THRISSUR",0,0,0.5
+"253","KERALA","ERNAKULAM",0,0,0.5
+"254","KERALA","IDUKKI",0,0,0.5
+"255","KERALA","KOTTAYAM",0,0,0.5
+"256","KERALA","ALAPPUZHA",0,0,0.5
+"257","KERALA","PATHANAMTHITTA",0,0,0
+"258","KERALA","KOLLAM",0,0,0.5
+"259","KERALA","THIRUVANANTHAPURAM",0,0.5,0
+"260","MADHYA PRADESH","SHEOPUR",1,1,1
+"261","MADHYA PRADESH","MORENA",1,1,1
+"262","MADHYA PRADESH","BHIND",1,1,1
+"263","MADHYA PRADESH","GWALIOR",1,1,1
+"264","MADHYA PRADESH","DATIA",1,1,1
+"265","MADHYA PRADESH","SHIVPURI",1,1,1
+"266","MADHYA PRADESH","TIKAMGARH",1,1,0.5
+"267","MADHYA PRADESH","CHHATARPUR",1,1,0.5
+"268","MADHYA PRADESH","PANNA",1,1,0.5
+"269","MADHYA PRADESH","SAGAR",1,0.5,0.5
+"270","MADHYA PRADESH","DAMOH",1,0.5,0.5
+"271","MADHYA PRADESH","SATNA",1,0.5,1
+"272","MADHYA PRADESH","REWA",1,0.5,0.5
+"273","MADHYA PRADESH","UMARIA",1,1,1
+"274","MADHYA PRADESH","NEEMUCH",0.5,0.5,0.5
+"275","MADHYA PRADESH","MANDSAUR",0.5,0.5,0.5
+"276","MADHYA PRADESH","RATLAM",1,1,0.5
+"277","MADHYA PRADESH","UJJAIN",0.5,0.5,0.5
+"278","MADHYA PRADESH","SHAJAPUR",1,1,1
+"279","MADHYA PRADESH","DEWAS",1,1,1
+"280","MADHYA PRADESH","DHAR",1,1,1
+"281","MADHYA PRADESH","INDORE",0.5,0.5,0.5
+"282","MADHYA PRADESH","KHARGONE (WEST NIMAR)",1,1,0.5
+"283","MADHYA PRADESH","BARWANI",1,1,1
+"284","MADHYA PRADESH","RAJGARH",0.5,1,1
+"285","MADHYA PRADESH","VIDISHA",1,1,0.5
+"286","MADHYA PRADESH","BHOPAL",1,0.5,0.5
+"287","MADHYA PRADESH","SEHORE",0.5,0.5,1
+"288","MADHYA PRADESH","RAISEN",1,1,0.5
+"289","MADHYA PRADESH","BETUL",0.5,1,1
+"290","MADHYA PRADESH","HARDA",0.5,1,1
+"291","MADHYA PRADESH","HOSHANGABAD",0.5,1,1
+"292","MADHYA PRADESH","KATNI",1,1,0.5
+"293","MADHYA PRADESH","JABALPUR",0.5,1,1
+"294","MADHYA PRADESH","NARSIMHAPUR",0.5,0.5,0.5
+"295","MADHYA PRADESH","DINDORI",1,1,1
+"296","MADHYA PRADESH","MANDLA",0.5,1,1
+"297","MADHYA PRADESH","CHHINDWARA",0.5,1,1
+"298","MADHYA PRADESH","SEONI",0.5,1,1
+"299","MADHYA PRADESH","BALAGHAT",0.5,1,1
+"300","MADHYA PRADESH","GUNA",1,1,1
+"301","MADHYA PRADESH","ASHOKNAGAR",1,1,1
+"302","MADHYA PRADESH","SHAHDOL",0.5,1,1
+"303","MADHYA PRADESH","ANUPPUR",0.5,0.5,1
+"304","MADHYA PRADESH","SIDHI",1,1,0.5
+"305","MADHYA PRADESH","SINGRAULI",0.5,0.5,1
+"306","MADHYA PRADESH","JHABUA",1,1,0.5
+"307","MADHYA PRADESH","ALIRAJPUR",1,1,1
+"308","MADHYA PRADESH","KHANDWA (EAST NIMAR)",1,1,0.5
+"309","MADHYA PRADESH","BURHANPUR",1,1,0.5
+"310","MAHARASHTRA","NANDURBAR",1,1,1
+"311","MAHARASHTRA","DHULE",0.5,1,1
+"312","MAHARASHTRA","JALGAON",0.5,0.5,1
+"313","MAHARASHTRA","BULDANA",1,1,0.5
+"314","MAHARASHTRA","AKOLA",1,0.5,0.5
+"315","MAHARASHTRA","WASHIM",1,1,1
+"316","MAHARASHTRA","AMRAVATI",0.5,0.5,0.5
+"317","MAHARASHTRA","WARDHA",0.5,0.5,1
+"318","MAHARASHTRA","NAGPUR",0.5,0.5,1
+"319","MAHARASHTRA","BHANDARA",1,0.5,0.5
+"320","MAHARASHTRA","GONDIYA",0.5,1,1
+"321","MAHARASHTRA","GADCHIROLI",0.5,1,1
+"322","MAHARASHTRA","CHANDRAPUR",0.5,1,1
+"323","MAHARASHTRA","YAVATMAL",1,1,1
+"324","MAHARASHTRA","NANDED",1,0.5,0.5
+"325","MAHARASHTRA","HINGOLI",0.5,0.5,0.5
+"326","MAHARASHTRA","PARBHANI",1,1,0.5
+"327","MAHARASHTRA","JALNA",1,1,0.5
+"328","MAHARASHTRA","AURANGABAD",0.5,0.5,0.5
+"329","MAHARASHTRA","NASHIK",1,1,1
+"330","MAHARASHTRA","THANE",0.5,1,1
+"331","MAHARASHTRA","MUMBAI SUBURBAN",0,0.5,0.5
+"332","MAHARASHTRA","MUMBAI",0.5,0.5,1
+"333","MAHARASHTRA","RAIGARH",0.5,0.5,1
+"334","MAHARASHTRA","PUNE",0,0.5,0.5
+"335","MAHARASHTRA","AHMADNAGAR",0.5,0.5,0.5
+"336","MAHARASHTRA","BID",0.5,0.5,1
+"337","MAHARASHTRA","LATUR",0.5,0.5,0.5
+"338","MAHARASHTRA","OSMANABAD",1,1,0.5
+"339","MAHARASHTRA","SOLAPUR",0.5,0.5,0.5
+"340","MAHARASHTRA","SATARA",0,0.5,0.5
+"341","MAHARASHTRA","RATNAGIRI",0.5,0.5,0.5
+"342","MAHARASHTRA","SINDHUDURG",0.5,0.5,0.5
+"343","MAHARASHTRA","KOLHAPUR",0.5,0.5,1
+"344","MAHARASHTRA","SANGLI",0,0.5,0.5
+"345","MANIPUR","SENAPATI",0.5,0,0
+"346","MANIPUR","TAMENGLONG",0.5,0,0
+"347","MANIPUR","CHURACHANDPUR",0.5,0,0
+"348","MANIPUR","BISHNUPUR",0,0,0
+"349","MANIPUR","THOUBAL",0.5,0,0
+"350","MANIPUR","IMPHAL WEST",0,0,0
+"351","MANIPUR","IMPHAL EAST",0.5,0,0
+"352","MANIPUR","UKHRUL",0.5,0,0
+"353","MANIPUR","CHANDEL",0.5,0,0
+"354","MEGHALAYA","WEST GARO HILLS",0.5,0.5,0.5
+"355","MEGHALAYA","EAST GARO HILLS",0.5,0,0
+"356","MEGHALAYA","SOUTH GARO HILLS",0,0.5,1
+"357","MEGHALAYA","WEST KHASI HILLS",1,0.5,0.5
+"358","MEGHALAYA","RIBHOI",1,0.5,0
+"359","MEGHALAYA","EAST KHASI HILLS",1,0.5,0
+"360","MEGHALAYA","JAINTIA HILLS",1,0.5,0.5
+"361","MIZORAM","MAMIT",0.5,0,0
+"362","MIZORAM","KOLASIB",0.5,0,0
+"363","MIZORAM","AIZWAL",0,0,0
+"364","MIZORAM","CHAMPHAI",0.5,0,0
+"365","MIZORAM","SERCHHIP",0.5,0,0
+"366","MIZORAM","LUNGLEI",0.5,0,0
+"367","MIZORAM","LAWNGTLAI",0.5,0.5,0
+"368","MIZORAM","SAIHA",0.5,0,0
+"369","NAGALAND","MON",0.5,0.5,0.5
+"370","NAGALAND","MOKOKCHUNG",0,0,0
+"371","NAGALAND","ZUNHEBOTO",0.5,0,0
+"372","NAGALAND","WOKHA",0,0,0
+"373","NAGALAND","DIMAPUR",0,0,0
+"374","NAGALAND","PHEK",0.5,0,0
+"375","NAGALAND","TUENSANG",0.5,0.5,0
+"376","NAGALAND","LONGLENG",0.5,0,0.5
+"377","NAGALAND","KIPHIRE",1,0.5,0
+"378","NAGALAND","KOHIMA",0,0,0
+"379","NAGALAND","PEREN",0.5,0,0
+"380","ODISHA","BARGARH",0.5,0.5,0.5
+"381","ODISHA","JHARSUGUDA",0.5,0.5,0.5
+"382","ODISHA","SAMBALPUR",1,1,1
+"383","ODISHA","DEBAGARH",0.5,0.5,0.5
+"384","ODISHA","SUNDARGARH",0.5,1,1
+"385","ODISHA","KENDUJHAR",1,1,0.5
+"386","ODISHA","MAYURBHANJ",1,1,0.5
+"387","ODISHA","BALESHWAR",0.5,0.5,0.5
+"388","ODISHA","BHADRAK",0.5,0.5,0.5
+"389","ODISHA","KENDRAPARA",0.5,0.5,0
+"390","ODISHA","JAGATSINGHAPUR",0,0,0
+"391","ODISHA","CUTTACK",0,0,0
+"392","ODISHA","JAJAPUR",0.5,0.5,0.5
+"393","ODISHA","DHENKANAL",0.5,0.5,0.5
+"394","ODISHA","ANUGUL",0.5,0.5,0.5
+"395","ODISHA","NAYAGARH",0.5,0.5,0.5
+"396","ODISHA","KHORDHA",0,0.5,0
+"397","ODISHA","PURI",0,0,0
+"398","ODISHA","GANJAM",0.5,0.5,0.5
+"399","ODISHA","GAJAPATI",0.5,0.5,0.5
+"400","ODISHA","KANDHAMAL",0.5,1,0.5
+"401","ODISHA","BAUDH",1,1,0.5
+"402","ODISHA","SUBARNAPUR",1,1,0.5
+"403","ODISHA","BALANGIR",1,1,1
+"404","ODISHA","NUAPADA",0.5,1,1
+"405","ODISHA","KALAHANDI",0.5,0.5,0.5
+"406","ODISHA","RAYAGADA",1,1,0.5
+"407","ODISHA","NABARANGAPUR",1,1,1
+"408","ODISHA","KORAPUT",1,1,1
+"409","ODISHA","MALKANGIRI",1,1,1
+"410","PUDUCHERRY","YANAM",0.5,0.5,0.5
+"411","PUDUCHERRY","PUDUCHERRY",0,0.5,0.5
+"412","PUDUCHERRY","MAHE",0.5,0,0
+"413","PUDUCHERRY","KARAIKAL",0,0.5,0.5
+"414","PUNJAB","GURDASPUR",0,0.5,0.5
+"415","PUNJAB","KAPURTHALA",0,0.5,0.5
+"416","PUNJAB","JALANDHAR",0.5,0.5,0.5
+"417","PUNJAB","HOSHIARPUR",0.5,0.5,0.5
+"418","PUNJAB","SHAHID BHAGAT SINGH NAGAR",0,0.5,0.5
+"419","PUNJAB","FATEHGARH SAHIB",0,0,0
+"420","PUNJAB","LUDHIANA",0.5,0.5,0.5
+"421","PUNJAB","MOGA",0.5,0.5,0.5
+"422","PUNJAB","FIROZPUR",0.5,0.5,0.5
+"423","PUNJAB","MUKTSAR",0.5,0.5,0.5
+"424","PUNJAB","FARIDKOT",0.5,0.5,0.5
+"425","PUNJAB","BATHINDA",0,0,0
+"426","PUNJAB","MANSA",0.5,0.5,0.5
+"427","PUNJAB","PATIALA",0,0,0
+"428","PUNJAB","AMRITSAR",0,0,0
+"429","PUNJAB","TARN TARAN",0,0,0
+"430","PUNJAB","RUPNAGAR",0,0.5,0
+"431","PUNJAB","SAHIBZADA AJIT SINGH NAGAR",0,0.5,0
+"432","PUNJAB","SANGRUR",0.5,0,0.5
+"433","PUNJAB","BARNALA",0,0,0
+"434","RAJASTHAN","GANGANAGAR",0.5,0.5,0.5
+"435","RAJASTHAN","HANUMANGARH",0.5,0.5,0.5
+"436","RAJASTHAN","BIKANER",0.5,0.5,0.5
+"437","RAJASTHAN","CHURU",0.5,0.5,0.5
+"438","RAJASTHAN","JHUNJHUNUN",0.5,0,0
+"439","RAJASTHAN","ALWAR",1,0.5,0.5
+"440","RAJASTHAN","BHARATPUR",1,0.5,0
+"441","RAJASTHAN","DHAULPUR",1,0.5,0.5
+"442","RAJASTHAN","KARAULI",1,0.5,0.5
+"443","RAJASTHAN","SAWAI MADHOPUR",0.5,0.5,0.5
+"444","RAJASTHAN","DAUSA",0.5,0.5,0.5
+"445","RAJASTHAN","JAIPUR",0.5,0.5,0
+"446","RAJASTHAN","SIKAR",0.5,0.5,0
+"447","RAJASTHAN","NAGAUR",0.5,0.5,0.5
+"448","RAJASTHAN","JODHPUR",1,0.5,0.5
+"449","RAJASTHAN","JAISALMER",0.5,0.5,0.5
+"450","RAJASTHAN","BARMER",0.5,0.5,1
+"451","RAJASTHAN","JALOR",1,1,1
+"452","RAJASTHAN","SIROHI",1,1,1
+"453","RAJASTHAN","PALI",1,1,0.5
+"454","RAJASTHAN","AJMER",0.5,0.5,1
+"455","RAJASTHAN","TONK",0.5,0.5,0.5
+"456","RAJASTHAN","BUNDI",0.5,1,1
+"457","RAJASTHAN","BHILWARA",0.5,1,1
+"458","RAJASTHAN","RAJSAMAND",0.5,0.5,1
+"459","RAJASTHAN","DUNGARPUR",1,1,1
+"460","RAJASTHAN","BANSWARA",1,1,1
+"461","RAJASTHAN","CHITTAURGARH",0.5,1,0.5
+"462","RAJASTHAN","KOTA",0.5,0.5,1
+"463","RAJASTHAN","BARAN",1,1,1
+"464","RAJASTHAN","JHALAWAR",0.5,1,1
+"465","RAJASTHAN","UDAIPUR",1,1,1
+"466","RAJASTHAN","PRATAPGARH",1,1,1
+"467","SIKKIM","NORTH DISTRICT",0,0,0.5
+"468","SIKKIM","WEST DISTRICT",1,0,0
+"469","SIKKIM","SOUTH DISTRICT",0.5,0.5,0.5
+"470","SIKKIM","EAST DISTRICT",0,0,0
+"471","TAMIL NADU","THIRUVALLUR",0.5,0.5,0.5
+"472","TAMIL NADU","CHENNAI",0.5,0,0.5
+"473","TAMIL NADU","KANCHEEPURAM",0,0,0
+"474","TAMIL NADU","VELLORE",0.5,0.5,1
+"475","TAMIL NADU","TIRUVANNAMALAI",0,0.5,1
+"476","TAMIL NADU","VILUPPURAM",0.5,0.5,0.5
+"477","TAMIL NADU","SALEM",0.5,0.5,0.5
+"478","TAMIL NADU","NAMAKKAL",0.5,0,0
+"479","TAMIL NADU","ERODE",0.5,0,0.5
+"480","TAMIL NADU","THE NILGIRIS",0.5,0.5,1
+"481","TAMIL NADU","DINDIGUL",0.5,0.5,1
+"482","TAMIL NADU","KARUR",0.5,0.5,0.5
+"483","TAMIL NADU","TIRUCHIRAPPALLI",0.5,0.5,0.5
+"484","TAMIL NADU","PERAMBALUR",0,0.5,0.5
+"485","TAMIL NADU","ARIYALUR",0.5,0.5,0.5
+"486","TAMIL NADU","CUDDALORE",0.5,0.5,0.5
+"487","TAMIL NADU","NAGAPATTINAM",0,0.5,0.5
+"488","TAMIL NADU","THIRUVARUR",0.5,0.5,0.5
+"489","TAMIL NADU","THANJAVUR",0.5,0.5,0.5
+"490","TAMIL NADU","PUDUKKOTTAI",0.5,0.5,0.5
+"491","TAMIL NADU","SIVAGANGA",0,0.5,0.5
+"492","TAMIL NADU","MADURAI",0,0,0
+"493","TAMIL NADU","THENI",0.5,0.5,0
+"494","TAMIL NADU","VIRUDHUNAGAR",0.5,0.5,0.5
+"495","TAMIL NADU","RAMANATHAPURAM",0,0.5,0.5
+"496","TAMIL NADU","THOOTHUKKUDI",0,0,0
+"497","TAMIL NADU","TIRUNELVELI",0.5,0.5,0
+"498","TAMIL NADU","KANNIYAKUMARI",0,0,0
+"499","TAMIL NADU","DHARMAPURI",0,0.5,1
+"500","TAMIL NADU","KRISHNAGIRI",0.5,0.5,0.5
+"501","TAMIL NADU","COIMBATORE",0.5,0.5,0.5
+"502","TAMIL NADU","TIRUPPUR",0.5,0.5,0.5
+"503","TELANGANA","ADILABAD",0.5,0.5,0.5
+"504","TELANGANA","NIZAMABAD",0.5,0.5,0.5
+"505","TELANGANA","KARIMNAGAR",0,0.5,0.5
+"506","TELANGANA","MEDAK",0.5,0.5,0.5
+"507","TELANGANA","HYDERABAD",0,0,0
+"508","TELANGANA","RANGAREDDY",0.5,0.5,0
+"509","TELANGANA","MAHBUBNAGAR",0.5,0.5,0.5
+"510","TELANGANA","NALGONDA",0.5,0.5,0.5
+"511","TELANGANA","WARANGAL",0.5,0.5,0.5
+"512","TELANGANA","KHAMMAM",0.5,0.5,0
+"513","TRIPURA","WEST TRIPURA",0,0,0
+"514","TRIPURA","SOUTH TRIPURA",0,0.5,0.5
+"515","TRIPURA","DHALAI",0.5,0.5,0.5
+"516","TRIPURA","NORTH TRIPURA",0.5,0.5,0
+"517","UTTAR PRADESH","SAHARANPUR",0.5,0.5,0.5
+"518","UTTAR PRADESH","MUZAFFARNAGAR",1,0.5,0.5
+"519","UTTAR PRADESH","BIJNOR",1,1,0.5
+"520","UTTAR PRADESH","MORADABAD",1,1,0.5
+"521","UTTAR PRADESH","RAMPUR",1,1,0.5
+"522","UTTAR PRADESH","JYOTIBA PHULE NAGAR",1,1,0.5
+"523","UTTAR PRADESH","MEERUT",0.5,0.5,0.5
+"524","UTTAR PRADESH","BAGHPAT",0.5,0.5,0
+"525","UTTAR PRADESH","GHAZIABAD",0.5,0.5,0
+"526","UTTAR PRADESH","GAUTUM BUDDHA NAGAR",0.5,0.5,0.5
+"527","UTTAR PRADESH","BULANDSHAHR",1,0.5,0.5
+"528","UTTAR PRADESH","ALIGARH",1,0.5,0
+"529","UTTAR PRADESH","MAHAMAYA NAGAR",1,0.5,0
+"530","UTTAR PRADESH","MATHURA",1,0.5,0
+"531","UTTAR PRADESH","AGRA",1,0.5,0
+"532","UTTAR PRADESH","FIROZABAD",1,0.5,0
+"533","UTTAR PRADESH","MAINPURI",1,0.5,0
+"534","UTTAR PRADESH","BUDAUN",1,1,0.5
+"535","UTTAR PRADESH","BAREILLY",1,1,0.5
+"536","UTTAR PRADESH","PILIBHIT",1,1,0.5
+"537","UTTAR PRADESH","SHAHJAHANPUR",1,1,0.5
+"538","UTTAR PRADESH","KHERI",1,1,0.5
+"539","UTTAR PRADESH","SITAPUR",1,1,0
+"540","UTTAR PRADESH","HARDOI",1,0.5,0
+"541","UTTAR PRADESH","UNNAO",1,0.5,0
+"542","UTTAR PRADESH","LUCKNOW",0.5,1,1
+"543","UTTAR PRADESH","RAE BARELI",0.5,1,1
+"544","UTTAR PRADESH","FARRUKHABAD",1,0.5,0
+"545","UTTAR PRADESH","KANNAUJ",1,0.5,0
+"546","UTTAR PRADESH","ETAWAH",1,0.5,0
+"547","UTTAR PRADESH","AURAIYA",1,1,1
+"548","UTTAR PRADESH","KANPUR DEHAT",1,0.5,0.5
+"549","UTTAR PRADESH","KANPUR NAGAR",1,1,0.5
+"550","UTTAR PRADESH","JALAUN",1,1,1
+"551","UTTAR PRADESH","JHANSI",0.5,0.5,1
+"552","UTTAR PRADESH","LALITPUR",1,1,1
+"553","UTTAR PRADESH","HAMIRPUR",0.5,0.5,1
+"554","UTTAR PRADESH","MAHOBA",1,1,0.5
+"555","UTTAR PRADESH","BANDA",1,1,0.5
+"556","UTTAR PRADESH","CHITRAKOOT",1,1,1
+"557","UTTAR PRADESH","FATEHPUR",1,1,0
+"558","UTTAR PRADESH","PRATAPGARH",1,1,0.5
+"559","UTTAR PRADESH","KAUSHAMBI",1,1,1
+"560","UTTAR PRADESH","ALLAHABAD",1,1,0.5
+"561","UTTAR PRADESH","BARA BANKI",1,1,0
+"562","UTTAR PRADESH","FAIZABAD",1,1,0.5
+"563","UTTAR PRADESH","AMBEDKAR NAGAR",1,1,0.5
+"564","UTTAR PRADESH","SULTANPUR",1,0.5,0.5
+"565","UTTAR PRADESH","BAHRAICH",1,1,0
+"566","UTTAR PRADESH","SHRAWASTI",1,0.5,0
+"567","UTTAR PRADESH","BALRAMPUR",1,1,0
+"568","UTTAR PRADESH","GONDA",1,0.5,0
+"569","UTTAR PRADESH","SIDDHARTHNAGAR",1,1,0
+"570","UTTAR PRADESH","BASTI",1,0.5,0
+"571","UTTAR PRADESH","SANT KABIR NAGAR",1,0.5,0
+"572","UTTAR PRADESH","MAHRAJGANJ",1,0.5,0
+"573","UTTAR PRADESH","GORAKHPUR",1,0.5,0.5
+"574","UTTAR PRADESH","KUSHINAGAR",1,0.5,0
+"575","UTTAR PRADESH","DEORIA",1,0.5,0
+"576","UTTAR PRADESH","AZAMGARH",0.5,0.5,0.5
+"577","UTTAR PRADESH","MAU",1,0.5,0.5
+"578","UTTAR PRADESH","BALLIA",0.5,0.5,0
+"579","UTTAR PRADESH","JAUNPUR",1,1,1
+"580","UTTAR PRADESH","GHAZIPUR",1,0.5,0.5
+"581","UTTAR PRADESH","CHANDAULI",1,0.5,0.5
+"582","UTTAR PRADESH","VARANASI",1,1,1
+"583","UTTAR PRADESH","SANT RAVIDAS NAGAR",1,1,0.5
+"584","UTTAR PRADESH","MIRZAPUR",1,1,0.5
+"585","UTTAR PRADESH","SONBHADRA",1,1,0.5
+"586","UTTAR PRADESH","ETAH",1,0.5,0
+"587","UTTAR PRADESH","KANSHIRAM NAGAR",1,0.5,0
+"588","UTTARAKHAND","UTTARKASHI",0.5,1,1
+"589","UTTARAKHAND","CHAMOLI",0.5,0.5,0.5
+"590","UTTARAKHAND","RUDRAPRAYAG",0.5,0.5,0.5
+"591","UTTARAKHAND","TEHRI GARHWAL",0.5,1,1
+"592","UTTARAKHAND","DEHRADUN",0.5,0.5,1
+"593","UTTARAKHAND","GARHWAL",0,0.5,1
+"594","UTTARAKHAND","PITHORAGARH",0.5,0,0.5
+"595","UTTARAKHAND","BAGESHWAR",0.5,0.5,1
+"596","UTTARAKHAND","ALMORA",0.5,0.5,0
+"597","UTTARAKHAND","CHAMPAWAT",0.5,0.5,0.5
+"598","UTTARAKHAND","NAINITAL",0.5,0,0
+"599","UTTARAKHAND","UDHAM SINGH NAGAR",0.5,0.5,0
+"600","UTTARAKHAND","HARDWAR",0.5,0.5,0
+"601","WEST BENGAL","DARJILING",0.5,0.5,0
+"602","WEST BENGAL","JALPAIGURI",0.5,0.5,0.5
+"603","WEST BENGAL","KOCH BIHAR",0.5,0.5,0.5
+"604","WEST BENGAL","UTTAR DINAJPUR",1,0.5,0
+"605","WEST BENGAL","DAKSHIN DINAJPUR",0.5,0.5,0.5
+"606","WEST BENGAL","MALDAH",0.5,0.5,0.5
+"607","WEST BENGAL","MURSHIDABAD",1,0.5,0.5
+"608","WEST BENGAL","BIRBHUM",1,1,1
+"609","WEST BENGAL","BARDDHAMAN",0.5,0.5,1
+"610","WEST BENGAL","NADIA",0,0,0
+"611","WEST BENGAL","NORTH TWENTY FOUR PARGANAS",0,0,0
+"612","WEST BENGAL","HUGLI",0.5,0.5,0.5
+"613","WEST BENGAL","BANKURA",0.5,0.5,1
+"614","WEST BENGAL","PURULIYA",1,1,1
+"615","WEST BENGAL","HAORA",0.5,0.5,0
+"616","WEST BENGAL","KOLKATA",0,0,0.5
+"617","WEST BENGAL","SOUTH TWENTY FOUR PARGANAS",0.5,0.5,0.5
+"618","WEST BENGAL","PASCHIM MEDINIPUR",0.5,1,1
+"619","WEST BENGAL","PURBA MEDINIPUR",0.5,0.5,0.5

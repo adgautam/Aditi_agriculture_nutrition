@@ -19,25 +19,119 @@ library(fs) # cross-platform file system operations
 library(tidyverse)
 library(skimr)
 library(sf)
+library(viridis)
 ```
 
 Loading all datasets
 ```{r}
-agri <- read_csv(path("01_Agriculture/Agridata_Cleaned_nopunjab.csv"))
+agri <- read_csv(path("01_Agriculture/Agridata_Cleaned_Corrected.csv"))
 nfhs2015 <- read_csv(path("02_Nutrition/NFHS2015_Cleaned.csv"))
 districts <- read_sf(path("03_Geodata/data/polbnda_ind.shp")) 
 ```
 
+```{r}
+districts <- districts %>% 
+  rename(district = laa)
+```
+
+
+Production of ALL Crops - by district
 
 ```{r}
-agri_nfhs <- merge(agri, nfhs2015, by.x = "district", by.y = "district")
-merged_data <- merge(districts, agri_nfhs, by.x = "laa", by.y = "district") %>% st_as_sf() 
-distinct(merged_data)
+agri2014 <- agri[agri$Crop_Year == 2014 | agri$Crop_Year == 2013 | agri$Crop_Year == 2012| agri$Crop_Year == 2011| agri$Crop_Year == 2010,]
+
+agri_all_bydistrict <- group_by(agri2014, district, Crop) %>%
+  summarise(mean = scales::comma(mean(Production_by_Area, na.rm = TRUE), accuracy = 0.1)) %>%
+  pivot_wider(
+    names_from = Crop,
+    values_from = mean
+  )
+agri_all_bydistrict <- agri_all_bydistrict %>% mutate_if(is.character,as.numeric)
+```
+Production of MSP vs Non-MSP Crops - by district
+
+```{r}
+agri2014$msp_nomsp <- ifelse(agri2014$msp==TRUE, "MSP", "Non_MSP")
+agri_msp_bydistrict <- group_by(agri2014, district, msp_nomsp) %>%
+  summarise(mean = scales::comma(mean(Production_by_Area, na.rm = TRUE), accuracy = 0.1)) %>%
+  pivot_wider(
+    names_from = msp_nomsp, 
+    values_from = mean
+  )
+agri_msp_bydistrict <- agri_msp_bydistrict %>% mutate_if(is.character,as.numeric)
 ```
 
 ```{r}
-ggplot(data = merged_data) +
-    geom_sf(aes(fill = stunting_range_d))
+agri_district_updated <- read_csv(path("01_Agriculture/Agri_Name_Updated.csv"))
+agri_district_updated <- agri_district_updated %>% 
+  rename(district = District_Name)
+agri_all_bydistrict <-  left_join(agri_all_bydistrict, agri_district_updated, by = "district")
+agri_msp_bydistrict <- left_join(agri_msp_bydistrict, agri_district_updated, by = "district")
 ```
 
-https://r-spatial.github.io/sf/reference/geos_unary.html
+```{r}
+agri_all_bydistrict <- agri_all_bydistrict %>% 
+  mutate(district = 
+  case_when(
+   Name_Updated != "NA" ~  Name_Updated, TRUE ~ district)
+  )
+
+agri_msp_bydistrict <- agri_msp_bydistrict %>% 
+ mutate(district = 
+  case_when(
+   Name_Updated != "NA" ~  Name_Updated, TRUE ~ district)
+  )
+```
+
+```{r}
+nutri_district_updated <- read_csv(path("02_Nutrition/Nutrition_district_updated.csv"))
+nutri_district_updated <- nutri_district_updated %>% 
+  rename(district = District_Name)
+
+nfhs2015 <- left_join(nfhs2015, nutri_district_updated, by = "district")
+```
+
+```{r}
+nfhs2015 <- nfhs2015 %>% 
+  mutate(district = 
+    case_when(
+      Name_Updated != "NA" ~  Name_Updated, TRUE ~ district)
+  )
+```
+
+```{r}
+merged <- merge(agri_all_bydistrict, agri_msp_bydistrict, by.x = "district", by.y = "district")
+merged <- merge(merged, nfhs2015, by.x = "district", by.y = "district")
+merged <- left_join(districts, merged, by = "district") %>% st_as_sf() 
+#merged <- distinct(merged, District_Name, .keep_all= TRUE)
+```
+
+```{r}
+ggplot(data = merged) +
+    geom_sf(aes(fill = stunting_range))
+```
+```{r}
+ggplot(data = merged) +
+    geom_sf(aes(fill = uw_range))
+```
+```{r}
+ggplot(data = merged) +
+    geom_sf(aes(fill = wasting_range))
+```
+```{r}
+ggplot(data = merged) +
+    geom_sf(aes(fill = MSP))
+```
+```{r}
+ggplot(data = merged) +
+    geom_sf(aes(fill = Non_MSP))
+```
+```{r}
+ggplot(data = merged) +
+    geom_sf(aes(fill = Rice))
+```
+
+```{r}
+
+```
+

@@ -54,34 +54,44 @@ Cleaning and standardizing variable names
 nfhs2015 <- clean_names(nfhs2015)
 ```
 
-Recoding the values of columns: stunting_range_d, uw_range_d, wasting_range_d
-
-Stunting
-```{r}
-nfhs2015["stunting_range_d"][nfhs2015["stunting_range_d"] == "Low (< 25%)"] <- "Low"
-nfhs2015["stunting_range_d"][nfhs2015["stunting_range_d"] == "Medium (25% - 40%)"] <- "Medium"
-nfhs2015["stunting_range_d"][nfhs2015["stunting_range_d"] == "High (> 40%)"] <- "High"
-```
-
-Underweight
-```{r}
-nfhs2015["uw_range_d"][nfhs2015["uw_range_d"] == "Low (< 20%)"] <- "Low"
-nfhs2015["uw_range_d"][nfhs2015["uw_range_d"] == "Medium (20% - 40%)"] <- "Medium"
-nfhs2015["uw_range_d"][nfhs2015["uw_range_d"] == "High (> 40%)"] <- "High"
-```
-
-Wasting
-```{r}
-nfhs2015["wasting_range_d"][nfhs2015["wasting_range_d"] == "Low (< 15%)"] <- "Low"
-nfhs2015["wasting_range_d"][nfhs2015["wasting_range_d"] == "Medium (15% - 25%)"] <- "Medium"
-nfhs2015["wasting_range_d"][nfhs2015["wasting_range_d"] == "High (> 25%)"] <- "High"
-```
-
 For now, we will be focussing on the three variables related to nutrition: Stunting, Underweight, Wasting
 
 ```{r}
 keeps <- c("state","district","stunting_range_d","uw_range_d","wasting_range_d")
 nfhs2015_subset = nfhs2015[keeps]
+```
+
+Recoding the values of columns: stunting_range_d, uw_range_d, wasting_range_d
+
+Stunting
+```{r}
+nfhs2015_subset["stunting_range_d"][nfhs2015_subset["stunting_range_d"] == "Low (< 25%)"] <- "0"
+nfhs2015_subset["stunting_range_d"][nfhs2015_subset["stunting_range_d"] == "Medium (25% - 40%)"] <- "0.5"
+nfhs2015_subset["stunting_range_d"][nfhs2015_subset["stunting_range_d"] == "High (> 40%)"] <- "1"
+nfhs2015_subset$stunting_range <- as.numeric(nfhs2015_subset$stunting_range_d)
+```
+
+Underweight
+```{r}
+nfhs2015_subset["uw_range_d"][nfhs2015_subset["uw_range_d"] == "Low (< 20%)"] <- "0"
+nfhs2015_subset["uw_range_d"][nfhs2015_subset["uw_range_d"] == "Medium (20% - 40%)"] <- "0.5"
+nfhs2015_subset["uw_range_d"][nfhs2015_subset["uw_range_d"] == "High (> 40%)"] <- "1"
+nfhs2015_subset$uw_range <- as.numeric(nfhs2015_subset$uw_range_d)
+```
+
+Wasting
+```{r}
+nfhs2015_subset["wasting_range_d"][nfhs2015_subset["wasting_range_d"] == "Low (< 15%)"] <- "0"
+nfhs2015_subset["wasting_range_d"][nfhs2015_subset["wasting_range_d"] == "Medium (15% - 25%)"] <- "0.5"
+nfhs2015_subset["wasting_range_d"][nfhs2015_subset["wasting_range_d"] == "High (> 25%)"] <- "1"
+nfhs2015_subset$wasting_range <- as.numeric(nfhs2015_subset$wasting_range_d)
+```
+
+Dropping extra variables
+
+```{r}
+keeps <- c("state","district","stunting_range","uw_range","wasting_range")
+nfhs2015_subset = nfhs2015_subset[keeps]
 ```
 
 ```{r}
@@ -94,4 +104,30 @@ Exporting the cleaned dataset
 ```{r}
 write.csv(nfhs2015_subset, file = "NFHS2015_Cleaned.csv")
 ```
+
+Table with stunting, underweight and wasting by state
+
+```{r}
+nfhs2015_summary <-
+  list("Stunting" =
+       list("median"    = ~ median(stunting_range),
+            "mean" = ~ qwraps2::mean(stunting_range)),
+       "Under-weight" =
+       list("median"    = ~ median(uw_range),
+            "mean" = ~ qwraps2::mean(uw_range)),
+       "Wasting" =
+       list("median"    = ~ median(wasting_range),
+            "mean" = ~ qwraps2::mean(wasting_range))
+       )
+```
+
+```{r}
+nfhs_bystate <- group_by(nfhs2015_subset, state) %>% 
+  summarise_at(c("stunting_range", "uw_range", "wasting_range"), mean, na.rm = TRUE)
+```
+
+```{r}
+write.csv(nfhs_bystate, file = "NFHS2015_ByState.csv")
+```
+
 
