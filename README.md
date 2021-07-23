@@ -39,5 +39,8 @@ Run the code in the Agriculture folder to clean the agriculture dataset. Repeat 
 ### Step 3:
 Run the code in the main folder to merge the clean datasets and produce the main analysis. 
 
+## Publication
+***
+Please read the narrative for the analysis here: https://medium.com/@aditigautam1995/why-the-msp-is-important-to-solve-indias-hunger-problem-683761e47af1
 
 Contact if you are facing any issues at aditigautam1995@gmail.com.

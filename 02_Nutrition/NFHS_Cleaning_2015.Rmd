@@ -131,10 +131,54 @@ nfhs2015_summary <-
 ```{r}
 nfhs_bystate <- group_by(nfhs2015_subset, state) %>% 
   summarise_at(c("stunting_range", "uw_range", "wasting_range"), mean, na.rm = TRUE)
+
+write.csv(nfhs_bystate, file = "NFHS2015_ByState.csv")
 ```
 
 ```{r}
-write.csv(nfhs_bystate, file = "NFHS2015_ByState.csv")
+top5_stunting <- nfhs_bystate %>% 
+  arrange(desc(stunting_range)) %>% 
+  slice(1:5)
+
+ggplot(top5_stunting, aes(reorder(state, -stunting_range), stunting_range)) +
+            geom_bar(stat = "identity",color='darkgreen',fill='lightgreen')+ 
+  xlab("State") +
+  ylab("Mean Stunting Range") +
+  labs(
+    title = "Top 5 States with Highest Stunting",
+    caption = "Source: NFHS, 2015",
+  )
+ggsave("Visualizations/stunting_top5.png")
+```
+```{r}
+top5_wasting <- nfhs_bystate %>% 
+  arrange(desc(wasting_range)) %>% 
+  slice(1:5)
+
+ggplot(top5_wasting, aes(reorder(state, -wasting_range), wasting_range)) +
+        geom_bar(stat = "identity",color='darkred',fill='maroon')+ 
+  xlab("State") +
+  ylab("Mean Wasting Range") +
+  labs(
+    title = "Top 5 States with Highest Wasting",
+    caption = "Source: NFHS, 2015",
+  )
+ggsave("Visualizations/wasting_top5.png")
+```
+```{r}
+top5_uw <- nfhs_bystate %>% 
+  arrange(desc(uw_range)) %>% 
+  slice(1:5)
+
+ggplot(top5_uw, aes(reorder(state, -uw_range), uw_range)) +
+    geom_bar(stat = "identity",color='skyblue',fill='steelblue')+ 
+  xlab("State") +
+  ylab("Mean Underweight Range") +
+  labs(
+    title = "Top 5 States with Highest Underweight",
+    caption = "Source: NFHS, 2015",
+  )
+ggsave("Visualizations/uw_top5.png")
 ```
 
 

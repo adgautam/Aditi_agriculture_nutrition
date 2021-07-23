@@ -25,6 +25,7 @@ options(tibble.max_extra_cols = 5, tibble.print_max = 5)
 library(fs) # cross-platform file system operations
 library(tidyverse)
 library(skimr)
+library(plotly)
 ```
 
 # Importing dataset
@@ -46,7 +47,7 @@ skim(agri)
 ```{r}
 agri <- agri %>% mutate(
   Production_by_Area = Production / Area,
-  msp = Crop %in% c("Paddy", "Wheat", "Maize", "Barley", "Ragi", "Gram", "Arhar/Tur", "Moong(Green Gram)", "Urad", "Masoor", "Groundnut", "Rapeseed &Mustard", "Soyabean", "Sesamum", "Sunflower", "Niger seed", "Cotton", "Jute & mesta", "Jowar", "Bajra", "Sugarcane")) 
+  msp = Crop %in% c("Paddy", "Wheat", "Maize", "Barley", "Ragi", "Gram", "Arhar/Tur", "Moong(Green Gram)", "Urad", "Masoor", "Groundnut", "Rapeseed &Mustard", "Soyabean", "Sesamum", "Sunflower", "Niger seed", "Cotton", "Jute & mesta", "Jowar", "Bajra", "Sugarcane", "Coconut")) 
 
 agri
 ```
@@ -114,7 +115,7 @@ group_by(agri, Crop_Year, Crop) %>%
   )
 ```
 
-# Looking at outliers in production for non-msp crops
+# Looking at outliers in production for msp crops
 
 ```{r}
 agri %>% 
@@ -251,6 +252,21 @@ dev.copy(png,'Visualizations/Aditi_Graph 5.png')
 ```
 
 ```{r}
+a<-ggplot(filter(agrimsp, !is.na(Production_by_Area), msp == TRUE)) +
+  aes(x = as.character(Crop_Year), y = log(Production_by_Area), color = Crop) +
+  geom_boxplot() +
+  theme_bw() +   
+  xlab("Year") +
+  ylab("Crop Yield") +
+  labs(
+    title = "MSP Crop Yield Across Year",
+    caption = "Source: Ministry of Agriculture, India",
+  )
+a + theme(legend.position="bottom", legend.text = element_text(size=7, face="bold"), legend.background = element_rect(fill="lightblue", size=0.5, linetype="solid"))
+dev.copy(png,'Visualizations/Aditi_Graph 6.png')
+```
+
+```{r}
 agri_corr_sum <- agri_corr %>% 
   group_by(msp, Crop_Year) %>% 
   summarise(mean = mean(Production_by_Area, na.rm=TRUE),
@@ -272,8 +288,9 @@ ggplot(agri_corr_sum) +
     y = "Production by Area (tonnes per hectare)",
     caption = "Source: Ministry of Agriculture, India"
   )
-dev.copy(png,'Visualizations/Aditi_Graph 6.png')
+dev.copy(png,'Visualizations/Aditi_Graph 7.png')
 ```
+
 Renaming state and district columns
 ```{r}
 agri_corr <- agri_corr %>% 

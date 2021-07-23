@@ -25,6 +25,7 @@ library(effects)
 library(ggplot2)
 library(ggiraph)
 library(formattable)
+library(plotly)
 ```
 
 Loading all datasets
@@ -32,17 +33,20 @@ Loading all datasets
 agri <- read_csv(path("01_Agriculture/Agridata_Cleaned_Corrected.csv"))
 nfhs2015 <- read_csv(path("02_Nutrition/NFHS2015_Cleaned_edited.csv"))
 districts <- read_sf(path("03_Geodata/data/polbnda_ind.shp")) 
+#states <- read_sf(path("03_Geodata/commondata/ind_adm_shp/IND_adm2.shp")) 
 ```
 
 ```{r}
 districts <- districts %>% 
-  rename(district = laa)
+  rename(district = laa) %>% 
+  rename(state = nam)
 nfhs2015 <- nfhs2015 %>% 
   rename(literacy_women = x12_women_who_are_literate_percent) %>%
   rename(literacy_men = x13_men_who_are_literate_percent) %>%
   rename(rural_population = rural_population_percapita)
+#states <- states %>% 
+#  rename(state = NAME_1)
 ```
-
 
 Production of ALL Crops - by district
 
@@ -114,8 +118,11 @@ nfhs2015 <- nfhs2015 %>%
 merged <- merge(agri_all_bydistrict, agri_msp_bydistrict, by.x = "district", by.y = "district")
 merged <- left_join(merged, nfhs2015, by = "district")
 merged <- left_join(districts, merged, by = "district") %>% st_as_sf() 
+#merged <- st_join(states, merged) %>% st_as_sf() 
 #merged <- distinct(merged, District_Name, .keep_all= TRUE)
 ```
+
+
 
 Maps
 
@@ -138,7 +145,7 @@ ggplot(data = merged) +
     panel.background = ggplot2::element_rect(fill = gray(0.75))
   )
 
-ggsave("04_Visualizations/stunting_map.png")
+#ggsave("04_Visualizations/stunting_map.png")
 ```
 
 ```{r}
