@@ -28,7 +28,7 @@ This folder contains the codes, visualization and data specific to nutrition dat
 ### 03_Geodata
 This folder contains the codes, visualization and data specific to geodata. 
 ### 04_Visualizations
-This folder contains all the spatial visualizations undertaken for with the merged data.
+This folder contains all the spatial visualizations undertaken with the merged data.
 ### Main
 The main folder contains the code for combining the datasets and doing the final analysis. 
 
