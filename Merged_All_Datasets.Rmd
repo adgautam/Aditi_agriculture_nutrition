@@ -1,5 +1,5 @@
 ---
-title: "Merging_All_Datasets"
+title: "Merging and Final Analysis"
 author: "Aditi Gautam"
 date: "12/07/2021"
 output: html_document
@@ -31,9 +31,8 @@ library(plotly)
 Loading all datasets
 ```{r}
 agri <- read_csv(path("01_Agriculture/Agridata_Cleaned_Corrected.csv"))
-nfhs2015 <- read_csv(path("02_Nutrition/NFHS2015_Cleaned_edited.csv"))
+nfhs2015 <- read_csv(path("02_Nutrition/NFHS2015_Cleaned.csv"))
 districts <- read_sf(path("03_Geodata/data/polbnda_ind.shp")) 
-#states <- read_sf(path("03_Geodata/commondata/ind_adm_shp/IND_adm2.shp")) 
 ```
 
 ```{r}
@@ -44,8 +43,6 @@ nfhs2015 <- nfhs2015 %>%
   rename(literacy_women = x12_women_who_are_literate_percent) %>%
   rename(literacy_men = x13_men_who_are_literate_percent) %>%
   rename(rural_population = rural_population_percapita)
-#states <- states %>% 
-#  rename(state = NAME_1)
 ```
 
 Production of ALL Crops - by district
@@ -76,6 +73,8 @@ agri_msp_bydistrict <- agri_msp_bydistrict %>% mutate_if(is.character,as.numeric
 agri_msp_bydistrict$MSP <- replace(agri_msp_bydistrict$MSP, which(agri_msp_bydistrict$MSP > 15), NA)
 ```
 
+Updating District names according to shape file
+
 ```{r}
 agri_district_updated <- read_csv(path("01_Agriculture/Agri_Name_Updated.csv"))
 agri_district_updated <- agri_district_updated %>% 
@@ -98,6 +97,8 @@ agri_msp_bydistrict <- agri_msp_bydistrict %>%
   )
 ```
 
+Updating District names according to shape file
+
 ```{r}
 nutri_district_updated <- read_csv(path("02_Nutrition/Nutrition_district_updated.csv"))
 nutri_district_updated <- nutri_district_updated %>% 
@@ -114,15 +115,13 @@ nfhs2015 <- nfhs2015 %>%
   )
 ```
 
+Merging datasets
+
 ```{r}
 merged <- merge(agri_all_bydistrict, agri_msp_bydistrict, by.x = "district", by.y = "district")
 merged <- left_join(merged, nfhs2015, by = "district")
 merged <- left_join(districts, merged, by = "district") %>% st_as_sf() 
-#merged <- st_join(states, merged) %>% st_as_sf() 
-#merged <- distinct(merged, District_Name, .keep_all= TRUE)
 ```
-
-
 
 Maps
 
@@ -145,7 +144,7 @@ ggplot(data = merged) +
     panel.background = ggplot2::element_rect(fill = gray(0.75))
   )
 
-#ggsave("04_Visualizations/stunting_map.png")
+ggsave("04_Visualizations/stunting_map.png")
 ```
 
 ```{r}
@@ -292,23 +291,6 @@ ggplot(data = merged) +
   )
 
 ggsave("04_Visualizations/Sugarcane_map.png")
-```
-
-Interactive Maps
-
-```{r}
-#g <- list(
-  #scope = 'usa',
-  #projection = list(type = 'albers usa'),
-  #lakecolor = toRGB('white')
-#)
-
-#plot_geo() %>%
- # add_trace(
-  #  z = ~density, text = state.name, span = I(0),
-   # locations = state.abb, locationmode = 'USA-states'
-  #) %>%
-  #layout(geo = g)
 ```
 
 Regressions

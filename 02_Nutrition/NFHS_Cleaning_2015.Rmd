@@ -29,37 +29,30 @@ library(readxl)
 library(janitor)
 ```
 
-# Importing dataset
+# Importing dataset and summarizing
 
 ```{r}
 nfhs2015 <- read_csv(path("NFHS_2015.csv"))
 spec(nfhs2015)
-```
-
-```{r layout="l-body-outset"}
 nfhs2015
-```
-
-```{r}
 glimpse(nfhs2015)
-```
-
-```{r}
 skim(nfhs2015)
 ```
 
-Cleaning and standardizing variable names
+# Cleaning and standardizing variable names
 
 ```{r}
 nfhs2015 <- clean_names(nfhs2015)
 ```
 
-For now, we will be focussing on the three variables related to nutrition: Stunting, Underweight, Wasting
+# For now, we will be focussing on the three variables related to nutrition: Stunting, Underweight, Wasting; alongside women and men's literacy and rural population and total population
 
 ```{r}
 keeps <- c("state","district","stunting_range_d","uw_range_d","wasting_range_d","rural_population","urban_population","total_population","x12_women_who_are_literate_percent","x13_men_who_are_literate_percent")
 nfhs2015_subset = nfhs2015[keeps]
 ```
+
+# Creating per capita rural population
 
 ```{r}
 nfhs2015_subset <- nfhs2015_subset %>%
@@ -68,9 +61,10 @@ nfhs2015_subset <- nfhs2015_subset %>%
 ```
 
 
-Recoding the values of columns: stunting_range_d, uw_range_d, wasting_range_d
+# Recoding the values of columns: stunting_range_d, uw_range_d, wasting_range_d
 
 Stunting
+
 ```{r}
 nfhs2015_subset["stunting_range_d"][nfhs2015_subset["stunting_range_d"] == "Low (< 25%)"] <- "0"
 nfhs2015_subset["stunting_range_d"][nfhs2015_subset["stunting_range_d"] == "Medium (25% - 40%)"] <- "0.5"
@@ -79,6 +73,7 @@ nfhs2015_subset$stunting_range <- as.numeric(nfhs2015_subset$stunting_range_d)
 ```
 
 Underweight
+
 ```{r}
 nfhs2015_subset["uw_range_d"][nfhs2015_subset["uw_range_d"] == "Low (< 20%)"] <- "0"
 nfhs2015_subset["uw_range_d"][nfhs2015_subset["uw_range_d"] == "Medium (20% - 40%)"] <- "0.5"
@@ -87,6 +82,7 @@ nfhs2015_subset$uw_range <- as.numeric(nfhs2015_subset$uw_range_d)
 ```
 
 Wasting
+
 ```{r}
 nfhs2015_subset["wasting_range_d"][nfhs2015_subset["wasting_range_d"] == "Low (< 15%)"] <- "0"
 nfhs2015_subset["wasting_range_d"][nfhs2015_subset["wasting_range_d"] == "Medium (15% - 25%)"] <- "0.5"
@@ -94,25 +90,27 @@ nfhs2015_subset["wasting_range_d"][nfhs2015_subset["wasting_range_d"] == "High (
 nfhs2015_subset$wasting_range <- as.numeric(nfhs2015_subset$wasting_range_d)
 ```
 
-Dropping extra variables
+# Dropping extra variables
 
 ```{r}
 keeps <- c("state","district","stunting_range","uw_range","wasting_range","rural_population_percapita","urban_population_percapita","total_population","x12_women_who_are_literate_percent","x13_men_who_are_literate_percent")
 nfhs2015_subset = nfhs2015_subset[keeps]
 ```
 
+# Renaming variables
+
 ```{r}
 nfhs2015_subset <- nfhs2015_subset %>% mutate(state = toupper(state))
 nfhs2015_subset <- nfhs2015_subset %>% mutate(district = toupper(district))
 ```
 
-Exporting the cleaned dataset
+# Exporting the cleaned dataset
 
 ```{r}
 write.csv(nfhs2015_subset, file = "NFHS2015_Cleaned.csv")
 ```
 
-Table with stunting, underweight and wasting by state
+# Table with stunting, underweight and wasting by state
 
 ```{r}
 nfhs2015_summary <-
@@ -128,6 +126,8 @@ nfhs2015_summary <-
        )
 ```
 
+# Exporting the nutrition dataset by state
+
 ```{r}
 nfhs_bystate <- group_by(nfhs2015_subset, state) %>% 
   summarise_at(c("stunting_range", "uw_range", "wasting_range"), mean, na.rm = TRUE)
@@ -135,6 +135,9 @@ nfhs_bystate <- group_by(nfhs2015_subset, state) %>%
 write.csv(nfhs_bystate, file = "NFHS2015_ByState.csv")
 ```
 
+# Plotting the top 5 states for all three types of malnutrition
+
+Stunting
 ```{r}
 top5_stunting <- nfhs_bystate %>% 
   arrange(desc(stunting_range)) %>% 
@@ -150,6 +153,7 @@ ggplot(top5_stunting, aes(reorder(state, -stunting_range), stunting_range)) +
   )
 ggsave("Visualizations/stunting_top5.png")
 ```
+Wasting
 ```{r}
 top5_wasting <- nfhs_bystate %>% 
   arrange(desc(wasting_range)) %>% 
@@ -165,6 +169,7 @@ ggplot(top5_wasting, aes(reorder(state, -wasting_range), wasting_range)) +
   )
 ggsave("Visualizations/wasting_top5.png")
 ```
+Underweight
 ```{r}
 top5_uw <- nfhs_bystate %>% 
   arrange(desc(uw_range)) %>% 

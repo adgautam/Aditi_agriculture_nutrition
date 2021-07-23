@@ -51,7 +51,8 @@ agri <- agri %>% mutate(
 
 agri
 ```
-# Looking and dropping outlier year
+# Looking and dropping outlier years 
+
 ```{r}
 aggregate(agri$Production_by_Area, list(agri$Crop_Year), FUN=mean, na.rm=TRUE) # 1997 and 2015 seem like outliers so we drop them. We will see what is happening in 2011 more closely below. 
 agri <- agri[agri$Crop_Year != 1997,]
@@ -79,16 +80,16 @@ ggplot(agri_sum) +
   geom_line() + 
   labs(
     title = 'Production by Area by Year - MSP vs Non-MSP crops',
-    subtitle = "Non-MSP crops have a much greater Production by Area compared to MSP",
+    subtitle = "MSP crops have a much greater Production by Area compared to Non-MSP",
     x = "Year",
     y = "Production by Area (tonnes per hectare)",
     caption = "Source: Ministry of Agriculture, India"
   ) +
   theme_bw()
-#dev.copy(png,'Visualizations/Aditi_Graph 1.png')
+ggsave("Visualizations/Yield1.png")
 ```
 
-# Looking at outliers in MSP vs non-MSP crops. Many non-MSP crops seem to be outliers.
+# Looking at outliers in MSP vs non-MSP crops. Many MSP crops seem to be outliers.
 
 ```{r}
 ggplot(filter(agri, !is.na(Production_by_Area))) +
@@ -97,14 +98,15 @@ ggplot(filter(agri, !is.na(Production_by_Area))) +
   theme_bw() +
    labs(
     title = 'Log of Production by Area by Year - MSP vs Non-MSP crops (Checking for outliers)',
-    subtitle = "Non-MSP crops have a much higher Production except in 2011",
+    subtitle = "MSP crops have a much higher Production",
     x = "Year",
     y = "Log of Production by Area (tonnes per hectare)",
     caption = "Source: Ministry of Agriculture, India"
   )
-#dev.copy(png,'Visualizations/Aditi_Graph 2.png')
+ggsave("Visualizations/Log_Yield1.png")
 ```
 
+# Looking at production averages by crop
 
 ```{r}
 group_by(agri, Crop_Year, Crop) %>%
@@ -120,92 +122,62 @@ group_by(agri, Crop_Year, Crop) %>%
 ```{r}
 agri %>% 
   group_by(Crop, Crop_Year) %>%
-  filter(msp == FALSE, log(Production_by_Area) > 5) %>%
-  ungroup() #Coconut seems to be an outlier that is driving the massive difference between msp and non-msp crops. 
+  filter(msp == TRUE, log(Production_by_Area) > 5) %>%
+  ungroup()
 ```
 
+# I will now be analysing data by 1. Removing Punjab for Sugarcane for 2011 along with other outliers. 2. Multiplying Punjab area for sugarcane in 2011 by 1000 to correct what we assume is an error in the data and dropping other outliers. 
+
+# 1. Dropping Punjab-Sugarcane for 2011 and other outliers
+
 ```{r}
-agri_nococo <- agri %>% 
+agri_nooutlier <- agri %>% 
   group_by(Crop, Crop_Year) %>%
   filter(log(Production_by_Area) < 5) %>%
   ungroup()
 
-agri_nococo
+agri_nooutlier
 ```
 
 ```{r}
-ggplot(filter(agri_nococo, !is.na(Production_by_Area))) +
+ggplot(filter(agri_nooutlier, !is.na(Production_by_Area))) +
   aes(x = as.character(Crop_Year), y = log(Production_by_Area), color = msp) +
   geom_boxplot() +
   theme_bw()
+ggsave("Visualizations/Log_Yield2.png")
 ```
 
+# Aggregating data by MSP and Year without Outliers
+
 ```{r}
-agri_nococo_sum <- agri_nococo %>% 
+agri_nooutlier_sum <- agri_nooutlier %>% 
   group_by(msp, Crop_Year) %>% 
   summarise(mean = mean(Production_by_Area, na.rm=TRUE),
             count = n()) %>% 
   ungroup()
 
-agri_nococo_sum
+agri_nooutlier_sum
 ```
 
 ```{r}
-ggplot(agri_nococo_sum) + 
+ggplot(agri_nooutlier_sum) + 
   aes(x = Crop_Year, y = mean, color = msp) + 
   geom_line() + 
   theme_bw() +
   labs(
-    title = 'Average Production by Area by Year - Without the non-MSP Outliers',
-    subtitle = "Non-MSP crops still have a much higher Production but it is more comparable",
+    title = 'Average Production by Area by Year - Without the MSP Outliers',
+    subtitle = "MSP and non-MSP have a volatile relationship",
     x = "Year",
     y = "Production by Area (tonnes per hectare)",
     caption = "Source: Ministry of Agriculture, India"
   )
-dev.copy(png,'Visualizations/Aditi_Graph 4.png')
+ggsave("Visualizations/Yield2.png")
 ```
 
-```{r}
-agri_nococo %>% filter(msp == TRUE, log(Production_by_Area) > 10) #there seems to be an issue with the data for Area in Punjab in 2011 leading to the big jump seen in the boxplot for MSP crops. 
-```
-# I will now be analysing data by 1. removing Punjab for Sugarcane for 2011. 2. Multiplying Punjab area for sugarcane in 2011 by 1000 to correct what we assume is an error in the data. 
-
-# 1. Removing Punjab-Sugarcane for 2011
-```{r}
-agri_nococo_nopunj <- agri_nococo[agri_nococo$Crop_Year != 2011 & agri_nococo$Crop != "Sugarcane" & agri_nococo$State_Name != "Punjab",]  
-ggplot(filter(agri_nococo_nopunj, !is.na(Production_by_Area))) +
-  aes(x = as.character(Crop_Year), y = log(Production_by_Area), color = msp) +
-  geom_boxplot() +
-  theme_bw()
-```
-```{r}
-agri_nococo_nopunj_sum <- agri_nococo_nopunj %>% 
-  group_by(msp, Crop_Year) %>% 
-  summarise(mean = mean(Production_by_Area, na.rm=TRUE),
-            count = n()) %>% 
-  ungroup()
-
-agri_nococo_nopunj_sum
-```
-
+# Renaming state and district columns
 
 ```{r}
-ggplot(agri_nococo_nopunj_sum) + 
-  aes(x = Crop_Year, y = mean, color = msp) + 
-  geom_line() + 
-  theme_bw() + 
-     labs(
-    title = 'Average Production by Area by Year - Without Outliers',
-    subtitle = "Non-MSP crops still have a much higher Production",
-    x = "Year",
-    y = "Production by Area (tonnes per hectare)",
-    caption = "Source: Ministry of Agriculture, India"
-  )
-dev.copy(png,'Visualizations/Aditi_Graph 3.png')
-```
-Renaming state and district columns
-```{r}
-agri_nococo_nopunj <- agri_nococo_nopunj %>% 
+agri_nooutlier <- agri_nooutlier %>% 
   rename(
     state = State_Name,
     district = District_Name
@@ -214,15 +186,17 @@ agri_nococo_nopunj <- agri_nococo_nopunj %>%
 
 
 ```{r}
-agri_nococo_nopunj <- agri_nococo_nopunj %>% mutate(state = toupper(state))
+agri_nooutlier <- agri_nooutlier %>% mutate(state = toupper(state))
 ```
 
-Exporting the cleaned dataset
+# Exporting the cleaned dataset
 ```{r}
-write.csv(agri_nococo_nopunj, file = "Agridata_Cleaned_nopunjab.csv")
+write.csv(agri_nooutlier, file = "Agridata_Cleaned_nopunjab.csv")
 ```
 
-# 2. Multiplying Punjab area for sugarcane in 2011 by 1000 to correct what we assume is an error in the data
+# 2. Multiplying Punjab area for sugarcane in 2011 by 1000 to correct what we assume is an error in the data and dropping ther outliers
+
+# Correcting Area variable 
 
 ```{r}
 agri_corr <- agri_nococo
@@ -234,6 +208,7 @@ agri_corr <- agri_corr %>%
   )
 ```
 
+# Correcting Yield variable
 
 ```{r}
 agri_corr <- agri_corr %>%
@@ -243,16 +218,29 @@ agri_corr <- agri_corr %>%
   )
 ```
 
+# Dropping rest of outliers - mostly coconut
+
+```{r}
+agri_corr <- agri_corr %>% 
+  group_by(Crop, Crop_Year) %>%
+  filter(log(Production_by_Area) < 5) %>%
+  ungroup()
+
+agri_corr
+```
+
 ```{r}
 ggplot(filter(agri_corr, !is.na(Production_by_Area))) +
   aes(x = as.character(Crop_Year), y = log(Production_by_Area), color = msp)+
   geom_boxplot() +
   theme_bw()
-dev.copy(png,'Visualizations/Aditi_Graph 5.png')
+ggsave("Visualizations/Log_Yield3.png")
 ```
 
+# Looking at log of production for all MSP crops
+
 ```{r}
-a<-ggplot(filter(agrimsp, !is.na(Production_by_Area), msp == TRUE)) +
+a<-ggplot(filter(agri_corr, !is.na(Production_by_Area), msp == TRUE)) +
   aes(x = as.character(Crop_Year), y = log(Production_by_Area), color = Crop) +
   geom_boxplot() +
   theme_bw() +   
@@ -263,8 +251,10 @@ a<-ggplot(filter(agrimsp, !is.na(Production_by_Area), msp == TRUE)) +
     caption = "Source: Ministry of Agriculture, India",
   )
 a + theme(legend.position="bottom", legend.text = element_text(size=7, face="bold"), legend.background = element_rect(fill="lightblue", size=0.5, linetype="solid"))
-dev.copy(png,'Visualizations/Aditi_Graph 6.png')
+ggsave("Visualizations/Log_Yield_Final.png")
 ```
+
+# Aggregating crop production by MSP and Year
 
 ```{r}
 agri_corr_sum <- agri_corr %>% 
@@ -275,6 +265,8 @@ agri_corr_sum <- agri_corr %>%
 
 agri_corr_sum
 ```
+
+# Plotting the Yield by year and MSP
 
 ```{r}
 ggplot(agri_corr_sum) + 
@@ -288,10 +280,11 @@ ggplot(agri_corr_sum) +
     y = "Production by Area (tonnes per hectare)",
     caption = "Source: Ministry of Agriculture, India"
   )
-dev.copy(png,'Visualizations/Aditi_Graph 7.png')
+ggsave("Visualizations/Yield_Final.png")
 ```
 
-Renaming state and district columns
+# Renaming state and district columns
+
 ```{r}
 agri_corr <- agri_corr %>% 
   rename(
@@ -300,12 +293,11 @@ agri_corr <- agri_corr %>%
     )
 ```
 
-
 ```{r}
 agri_corr <- agri_corr %>% mutate(state = toupper(state))
 ```
 
-Exporting the cleaned dataset
+# Exporting the cleaned dataset
 ```{r}
 write.csv(agri_corr, file = "Agridata_Cleaned_Corrected.csv")
 ```
